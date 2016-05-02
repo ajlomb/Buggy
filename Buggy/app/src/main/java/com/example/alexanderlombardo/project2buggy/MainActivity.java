@@ -16,9 +16,9 @@ import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import com.example.alexanderlombardo.project2buggy.setup.DBAssetHelper;
+
 public class MainActivity extends AppCompatActivity {
-
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,14 +26,14 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         //  Turn back on once database is set up
-//        DBAssetHelper dbSetup = new DBAssetHelper(MainActivity.this);
-//        dbSetup.getReadableDatabase();
+        DBAssetHelper dbSetup = new DBAssetHelper(MainActivity.this);
+        dbSetup.getReadableDatabase();
 
         ListView mainList = (ListView)findViewById(R.id.main_list_view);
         ListView dailyBugDisplay = (ListView)findViewById(R.id.main_daily_bug);
 
         //  Turn back on once database is set up
-//        Cursor mainCursor = new BugSQLiteOpenHelper(this).getStaticBugList();
+        Cursor mainCursor = new BugSQLiteOpenHelper(this).getStaticBugList();
 
         //  change the "null" below to a 'cursor' variable defined above(?)
         CursorAdapter dailyBugCursorAdapter = new CursorAdapter(MainActivity.this, null, 0) {
