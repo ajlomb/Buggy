@@ -13,6 +13,7 @@ import android.view.MenuInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
+import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -31,20 +32,24 @@ public class MainActivity extends AppCompatActivity {
 
 
         //  Turn back on once database is set up
-        Cursor mainCursor = new BugSQLiteOpenHelper(this).getBugs();
+        final Cursor mainCursor = new BugSQLiteOpenHelper(this).getBugs();
 
         CursorAdapter searchableCursorAdapter = new CursorAdapter(MainActivity.this, null, 0) {
             @Override
             public View newView(Context context, Cursor cursor, ViewGroup parent) {
-                return LayoutInflater.from(context).inflate(R.layout.main_list_format)
+                return LayoutInflater.from(context).inflate(R.layout.main_list_format, parent, false);
             }
 
             @Override
             public void bindView(View view, Context context, Cursor cursor) {
+                TextView commonNameTV = (TextView)findViewById(R.id.main_list_common);
+                TextView latinNameTV = (TextView)findViewById(R.id.main_list_latin);
 
+                commonNameTV.setText(mainCursor.getString(mainCursor.getColumnIndex(BugSQLiteOpenHelper.COL_COMMON_NAME)));
+                latinNameTV.setText(mainCursor.getString(mainCursor.getColumnIndex(BugSQLiteOpenHelper.COL_LATIN_NAME)));
             }
         };
-        //  change the "null" below to a 'cursor' variable defined above(?)
+//        change the "null" below to a 'cursor' variable defined above(?)
 //        CursorAdapter dailyBugCursorAdapter = new CursorAdapter(MainActivity.this, null, 0) {
 //            @Override
 //            public View newView(Context context, Cursor cursor, ViewGroup parent) {

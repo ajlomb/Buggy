@@ -51,7 +51,7 @@ public class BugSQLiteOpenHelper extends SQLiteOpenHelper {
         onCreate(db);
     }
 
-    public void insertBugData(int id, String commonName, String latinName, ){
+    public void insertBugData(int id, String commonName, String latinName){
         SQLiteDatabase db = getWritableDatabase();
         ContentValues values = new ContentValues();
 
