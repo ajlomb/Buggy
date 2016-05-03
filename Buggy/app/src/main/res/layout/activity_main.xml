@@ -13,19 +13,8 @@
     <ListView
         android:id="@+id/main_list_view"
         android:layout_width="match_parent"
-        android:layout_height="350dp"
+        android:layout_height="match_parent"
         android:padding="5dp"
         />
 
-    <!--<ListView-->
-        <!--android:id="@+id/main_daily_bug"-->
-        <!--android:layout_below="@+id/main_list_view"-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="130dp"-->
-        <!--android:padding="5dp"-->
-        <!--&gt;-->
-    <!--</ListView>-->
-
-    
-    
 </RelativeLayout>

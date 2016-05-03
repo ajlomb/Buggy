@@ -10,8 +10,8 @@ import android.database.sqlite.SQLiteOpenHelper;
  * Created by alexanderlombardo on 4/29/16.
  */
 public class BugSQLiteOpenHelper extends SQLiteOpenHelper {
-    private static final int DATABASE_VERSION = 0;
-    public static final String DATABASE_NAME = "BUG_DB";
+    private static final int DATABASE_VERSION = 1;
+    public static final String DATABASE_NAME = "BUG_TABLE";
     public static final String BUG_TABLE_TITLE = "BUG_TABLE";
 
     public static final String COL_ID = "_id";
@@ -26,46 +26,60 @@ public class BugSQLiteOpenHelper extends SQLiteOpenHelper {
 
     private static final String CREATE_BUG_TABLE =
             "CREATE TABLE " + BUG_TABLE_TITLE +
-                    "(" + COL_ID + "INTEGER PRIMARY KEY AUTOINCREMENT, " +
-                    COL_COMMON_NAME + " TEXT " +
-                    COL_LATIN_NAME + " TEXT " +
-                    COL_NUM_LEGS + " TEXT " +
-                    COL_WINGS + " TEXT " +
-                    COL_COLOR + " TEXT " +
-                    COL_DESCRIPTION + " TEXT";
+                    "(" + COL_ID + " INTEGER PRIMARY KEY, " +
+                    COL_COMMON_NAME + " TEXT, " +
+                    COL_LATIN_NAME + " TEXT, " +
+                    COL_NUM_LEGS + " TEXT, " +
+                    COL_WINGS + " TEXT, " +
+                    COL_COLOR + " TEXT, " +
+                    COL_DESCRIPTION + " TEXT);";
 
     public static final String DROP_BUG_TABLE = "DROP TABLE IF EXISTS " + CREATE_BUG_TABLE;
 
+    //No understanding of what this does
     public BugSQLiteOpenHelper(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
     }
 
+    //Don't know what this is doing short of executing the create table SQL tied to the variable.
     @Override
     public void onCreate(SQLiteDatabase db) {
         db.execSQL(CREATE_BUG_TABLE);
+
+        insertBugData(1, "Honey Bee", "Apis mellifera", "6", "1", "black, yellow", "Bees like honey and stinging things.");
+        insertBugData(2, "Praying Mantis", "Stagmomantis californica", "6", "1", "yellow, green, brown", "Also a style of kung-fu");
     }
 
+    //Supposedly upgrades the database if there are changes.
     @Override
     public void onUpgrade(SQLiteDatabase db, int i, int i1) {
         db.execSQL(DROP_BUG_TABLE);
         onCreate(db);
     }
 
-    public void insertBugData(int id, String commonName, String latinName){
+    //I have no idea what I'm supposed to do with this section
+    public void insertBugData(int id, String commonName, String latinName, String numLegs, String withWings, String bugColor, String bugDescript){
         SQLiteDatabase db = getWritableDatabase();
         ContentValues values = new ContentValues();
 
         values.put("_id", id);
         values.put("COMMON_NAME", commonName);
         values.put("LATIN_NAME", latinName);
+        values.put("NUM_LEGS", numLegs);
+        values.put("WINGS", withWings);
+        values.put("COLOR", bugColor);
+        values.put("DESCRIPT", bugDescript);
 
         db.insert("BUG_TABLE", null, values);
     }
 
+
+
+    //called on in the MainActivity, accesses database and return information from it?
     public Cursor getBugs() {
         SQLiteDatabase db = this.getReadableDatabase();
 
-        Cursor bugsCursor = db.query(DATABASE_NAME, BUG_COLUMNS, null, null, null, null, null, null);
+        Cursor bugsCursor = db.query(BUG_TABLE_TITLE, BUG_COLUMNS, null, null, null, null, null, null);
         return bugsCursor;
     }
 
