@@ -43,7 +43,7 @@ public class BugSQLiteOpenHelper extends SQLiteOpenHelper {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
     }
 
-    public static BugSQLiteOpenHelper getInstace(Context context) {
+    public static BugSQLiteOpenHelper getInstance(Context context) {
         if(bugInstance == null) {
             bugInstance = new BugSQLiteOpenHelper(context.getApplicationContext());
         }
@@ -54,8 +54,6 @@ public class BugSQLiteOpenHelper extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
         db.execSQL(CREATE_BUG_TABLE);
-
-
     }
 
     //Supposedly upgrades the database if there are changes.
@@ -81,8 +79,6 @@ public class BugSQLiteOpenHelper extends SQLiteOpenHelper {
         db.insert("BUG_TABLE", null, values);
     }
 
-
-
     //called on in the MainActivity, accesses database and return information from it?
     public Cursor getBugs() {
         SQLiteDatabase db = this.getReadableDatabase();
@@ -91,4 +87,19 @@ public class BugSQLiteOpenHelper extends SQLiteOpenHelper {
         return bugsCursor;
     }
 
+//    public String getBugDetails(int id) {
+//        SQLiteDatabase db = this.getReadableDatabase();
+//
+//        Cursor insectCursor = db.query(BUG_TABLE_TITLE,
+//                new String[]{COL_COMMON_NAME, COL_LATIN_NAME, COL_NUM_LEGS, COL_WINGS, COL_COLOR, COL_DESCRIPTION},
+//                COL_ID+" = ?",
+//                new String[]{String.valueOf(id)},
+//                null, null, null, null);
+//
+//        if(insectCursor.moveToFirst()){
+//            return insectCursor.getString(insectCursor.getColumnIndex(COL_COMMON_NAME));
+//        }else{
+//            return "Herpaderpadoo";
+//        }
+//    }
 }
