@@ -13,6 +13,8 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         //oncreate, sets XML page to display on
@@ -20,7 +22,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         //makes SQLiteOpenHelper helper, gets readable database, no idea beyond that.
-        BugSQLiteOpenHelper dbSetup = new BugSQLiteOpenHelper(MainActivity.this);
+        BugSQLiteOpenHelper dbSetup = BugSQLiteOpenHelper.getInstace(MainActivity.this);
         dbSetup.getReadableDatabase();
 
         //sets listview, allows population of listview wtih data
@@ -30,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
         final Cursor mainCursor = new BugSQLiteOpenHelper(this).getBugs();
 
         //CursorAdapter; this is also important for reasons I don't understand short of it allowing me to do what I'm supposed to accomplish.
-        CursorAdapter searchableCursorAdapter = new CursorAdapter(MainActivity.this, null, 0) {
+        CursorAdapter bugCursorAdapter = new CursorAdapter(MainActivity.this, null, 0) {
             //newView; gives the activity listview a custom format based on XML in layout which is linked.
             @Override
             public View newView(Context context, Cursor cursor, ViewGroup parent) {
@@ -48,9 +50,9 @@ public class MainActivity extends AppCompatActivity {
             }
         };
         //this does what?
-        mainList.setAdapter(searchableCursorAdapter);
+        mainList.setAdapter(bugCursorAdapter);
 
-        dbSetup.insertBugData(1, "Honey Bee", "Apis mellifera", "6", "1", "black, yellow", "Bees like honey and stinging things.");
+        dbSetup.insertBugData(1, "Honey Bee", "Apis mellifera", "6", "1", "black, yellow", "99% of bees you've seen are hard working ladies.");
         dbSetup.insertBugData(2, "Praying Mantis", "Stagmomantis californica", "6", "1", "yellow, green, brown", "Also a style of kung-fu");
 
     }

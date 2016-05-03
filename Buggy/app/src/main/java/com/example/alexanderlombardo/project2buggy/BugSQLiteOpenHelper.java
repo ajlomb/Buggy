@@ -24,6 +24,8 @@ public class BugSQLiteOpenHelper extends SQLiteOpenHelper {
 
     public static final String[] BUG_COLUMNS = {COL_ID, COL_COMMON_NAME, COL_LATIN_NAME, COL_NUM_LEGS, COL_WINGS, COL_COLOR, COL_DESCRIPTION};
 
+    private static BugSQLiteOpenHelper bugInstance;
+
     private static final String CREATE_BUG_TABLE =
             "CREATE TABLE " + BUG_TABLE_TITLE +
                     "(" + COL_ID + " INTEGER PRIMARY KEY, " +
@@ -41,6 +43,13 @@ public class BugSQLiteOpenHelper extends SQLiteOpenHelper {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
     }
 
+    public static BugSQLiteOpenHelper getInstace(Context context) {
+        if(bugInstance == null) {
+            bugInstance = new BugSQLiteOpenHelper(context.getApplicationContext());
+        }
+        return bugInstance;
+    }
+
     //Don't know what this is doing short of executing the create table SQL tied to the variable.
     @Override
     public void onCreate(SQLiteDatabase db) {
@@ -56,7 +65,7 @@ public class BugSQLiteOpenHelper extends SQLiteOpenHelper {
         onCreate(db);
     }
 
-    //I have no idea what I'm supposed to do with this section
+    //Allows adding of data to DB.
     public void insertBugData(int id, String commonName, String latinName, String numLegs, String withWings, String bugColor, String bugDescript){
         SQLiteDatabase db = getWritableDatabase();
         ContentValues values = new ContentValues();
