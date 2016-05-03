@@ -46,8 +46,7 @@ public class BugSQLiteOpenHelper extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase db) {
         db.execSQL(CREATE_BUG_TABLE);
 
-        insertBugData(1, "Honey Bee", "Apis mellifera", "6", "1", "black, yellow", "Bees like honey and stinging things.");
-        insertBugData(2, "Praying Mantis", "Stagmomantis californica", "6", "1", "yellow, green, brown", "Also a style of kung-fu");
+
     }
 
     //Supposedly upgrades the database if there are changes.

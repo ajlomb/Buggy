@@ -50,6 +50,8 @@ public class MainActivity extends AppCompatActivity {
         //this does what?
         mainList.setAdapter(searchableCursorAdapter);
 
+        dbSetup.insertBugData(1, "Honey Bee", "Apis mellifera", "6", "1", "black, yellow", "Bees like honey and stinging things.");
+        dbSetup.insertBugData(2, "Praying Mantis", "Stagmomantis californica", "6", "1", "yellow, green, brown", "Also a style of kung-fu");
 
     }
 
