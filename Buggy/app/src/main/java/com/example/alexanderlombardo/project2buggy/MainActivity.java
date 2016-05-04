@@ -4,7 +4,6 @@ import android.app.SearchManager;
 import android.content.Context;
 import android.content.Intent;
 import android.database.Cursor;
-import android.database.DatabaseUtils;
 import android.os.Bundle;
 import android.support.v4.widget.CursorAdapter;
 import android.support.v7.app.AppCompatActivity;
@@ -63,7 +62,7 @@ public class MainActivity extends AppCompatActivity {
         //Seeds the database using the insertBugData Method in the BugSQLiteOpenHelper Class.
 
         //Dumps a log of the current data held in the mainCursor to the log, does nothing to affect the app while running.
-        DatabaseUtils.dumpCursor(mainCursor);
+        //DatabaseUtils.dumpCursor(mainCursor);
 
         //Sets the OnItemClickListener to entries in the ListView to move to the DetailsActivity;
         //mainCursor is set to the index position of the entry clicked with moveToPosition;

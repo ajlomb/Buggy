@@ -60,21 +60,21 @@ public class BugSQLiteOpenHelper extends SQLiteOpenHelper {
         insertBugData(2, "Praying Mantis",
                 "Stagmomantis californica", "6", "1", "yellow, green, brown",
                 "Also a style of kung-fu");
-        insertBugData(3, "Black Widow",
+        insertBugData(3, "Black Widow Spider",
                 "Latrodectus hesperus", "8", "0", "black, red",
                 "The western black widow spider or western widow, is a venomous spider species found in western regions of North America.");
         insertBugData(4, "House Cricket",
                 "Acheta domestica", "6", "1", "brown, grey",
                 "The house cricket is typically gray or brownish in color, growing to 16–21 millimetres (0.63–0.83 in) in length.");
         insertBugData(5, "Tiger Swallowtail",
-        "Papilio glaucus", "6", "1", "yellow, black",
-        "a species of swallowtail butterfly native to eastern North America");
+                "Papilio glaucus", "6", "1", "yellow, black",
+                "a species of swallowtail butterfly native to eastern North America");
         insertBugData(6, "Earthworm",
-        "Lumbricus terrestris", "0", "0", "brown, pink",
-        "An earthworm is a tube-shaped, segmented worm found in the phylum Annelida. Earthworms are commonly found living in soil, feeding on live and dead organic matter.");
+                "Lumbricus terrestris", "0", "0", "brown, pink",
+                "An earthworm is a tube-shaped, segmented worm found in the phylum Annelida. Earthworms are commonly found living in soil, feeding on live and dead organic matter.");
         insertBugData(7, "Black Bean Aphid",
-        "Aphis fabae", "6", "1", "black",
-        "Other common names include blackfly, bean aphid and beet leaf aphid. In the warmer months of the year it is found in large numbers on the undersides of leaves and on the growing tips of host plants, including various agricultural crops and many wild and ornamental plants.");
+                "Aphis fabae", "6", "1", "black",
+                "Other common names include blackfly, bean aphid and beet leaf aphid. In the warmer months of the year it is found in large numbers on the undersides of leaves and on the growing tips of host plants, including various agricultural crops and many wild and ornamental plants.");
         insertBugData(8, "Green Aphid",
                 "Acyrthosiphon pisum", "6", "1", "green, yellow",
                 "Acyrthosiphon pisum, commonly known as the pea aphid (and colloquially known as the green dolphin, pea louse, and clover louse), is a sap-sucking insect in the Aphididae family.");
@@ -136,8 +136,8 @@ public class BugSQLiteOpenHelper extends SQLiteOpenHelper {
 
         Cursor searchCursor = db.query(BUG_TABLE_TITLE,
                 BUG_COLUMNS,
-                COL_NUM_LEGS + " LIKE ? OR " + COL_COLOR + " LIKE ? ",
-                new String[]{"%"+query+"%", "%"+query+"%"},
+                COL_COMMON_NAME + " LIKE ? OR " + COL_LATIN_NAME + " LIKE ? OR " + COL_NUM_LEGS + " LIKE ? OR " + COL_COLOR + " LIKE ? ",
+                new String[]{"%"+query+"%", "%"+query+"%", "%"+query+"%"},
                 null, null, null, null);
 
         return searchCursor;
