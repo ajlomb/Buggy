@@ -1,5 +1,6 @@
 package com.example.alexanderlombardo.project2buggy;
 
+import android.app.SearchManager;
 import android.content.Context;
 import android.content.Intent;
 import android.database.Cursor;
@@ -7,7 +8,10 @@ import android.database.DatabaseUtils;
 import android.os.Bundle;
 import android.support.v4.widget.CursorAdapter;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.SearchView;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
@@ -80,7 +84,7 @@ public class MainActivity extends AppCompatActivity {
         //Dumps a log of the current data held in the mainCursor to the log, does nothing to affect the app while running.
         DatabaseUtils.dumpCursor(mainCursor);
 
-        //Sets the OnItemClickListener to entries in the ListView to move to the DetailsActivity Class;
+        //Sets the OnItemClickListener to entries in the ListView to move to the DetailsActivity;
         //mainCursor is set to the index position of the entry clicked with moveToPosition;
         //Passes the ColumnIndex of the entry clicked on, with key "id", to the DetailsActivity Class;
         mainList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -95,15 +99,21 @@ public class MainActivity extends AppCompatActivity {
     }
 
 //    related to search function
-//    @Override
-//    public boolean onCreateOptionsMenu (Menu menu) {
-//        MenuInflater menuInflater = getMenuInflater();
-//        menuInflater.inflate(R.menu.menu_search, menu);
-//
-//        SearchManager searchManager = (SearchManager)getSystemService(Context.SEARCH_SERVICE);
-//        SearchView searchView = (SearchView)menu.findItem(R.id.menu_search).getActionView();
-//        searchView.setSearchableInfo(searchManager.getSearchableInfo(getComponentName()));
-//
-//        return true;
-//    }
+    @Override
+    public boolean onCreateOptionsMenu (Menu menu) {
+        MenuInflater menuInflater = getMenuInflater();
+        menuInflater.inflate(R.menu.menu_search, menu);
+
+        SearchManager searchManager = (SearchManager)getSystemService(Context.SEARCH_SERVICE);
+        SearchView searchView = (SearchView)menu.findItem(R.id.menu_search).getActionView();
+        searchView.setSearchableInfo(searchManager.getSearchableInfo(getComponentName()));
+
+        return true;
+    }
 }
+//    SearchManager searchManager =
+//            (SearchManager) getSystemService(Context.SEARCH_SERVICE);
+//    SearchView searchView =
+//            (SearchView) menu.findItem(R.id.search).getActionView();
+//    searchView.setSearchableInfo(
+//        searchManager.getSearchableInfo(getComponentName()));
