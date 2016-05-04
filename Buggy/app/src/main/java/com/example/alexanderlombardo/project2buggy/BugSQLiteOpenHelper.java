@@ -6,9 +6,6 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
-/**
- * Created by alexanderlombardo on 4/29/16.
- */
 public class BugSQLiteOpenHelper extends SQLiteOpenHelper {
     private static final int DATABASE_VERSION = 1;
     public static final String DATABASE_NAME = "BUG_TABLE";
@@ -79,7 +76,7 @@ public class BugSQLiteOpenHelper extends SQLiteOpenHelper {
         db.insert("BUG_TABLE", null, values);
     }
 
-    //called on in the MainActivity, accesses database and return information from it?
+    //Called on in MainActivity
     public Cursor getBugs() {
         SQLiteDatabase db = this.getReadableDatabase();
 
@@ -87,19 +84,20 @@ public class BugSQLiteOpenHelper extends SQLiteOpenHelper {
         return bugsCursor;
     }
 
-//    public String getBugDetails(int id) {
-//        SQLiteDatabase db = this.getReadableDatabase();
-//
-//        Cursor insectCursor = db.query(BUG_TABLE_TITLE,
-//                new String[]{COL_COMMON_NAME, COL_LATIN_NAME, COL_NUM_LEGS, COL_WINGS, COL_COLOR, COL_DESCRIPTION},
-//                COL_ID+" = ?",
-//                new String[]{String.valueOf(id)},
-//                null, null, null, null);
-//
-//        if(insectCursor.moveToFirst()){
-//            return insectCursor.getString(insectCursor.getColumnIndex(COL_COMMON_NAME));
-//        }else{
-//            return "Herpaderpadoo";
-//        }
-//    }
+    //Passes
+    public Cursor getBugDetails(int id) {
+        SQLiteDatabase db = this.getReadableDatabase();
+
+        Cursor insectCursor = db.query(BUG_TABLE_TITLE,
+                new String[]{COL_COMMON_NAME, COL_LATIN_NAME, COL_NUM_LEGS, COL_WINGS, COL_COLOR, COL_DESCRIPTION},
+                COL_ID+" = ?",
+                new String[]{String.valueOf(id)},
+                null, null, null, null);
+
+        if(insectCursor.moveToFirst()){
+            return insectCursor;
+        }else{
+            return null;
+        }
+    }
 }
