@@ -51,6 +51,8 @@ public class BugSQLiteOpenHelper extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
         db.execSQL(CREATE_BUG_TABLE);
+
+
     }
 
     //Supposedly upgrades the database if there are changes.
@@ -84,7 +86,7 @@ public class BugSQLiteOpenHelper extends SQLiteOpenHelper {
         return bugsCursor;
     }
 
-    //Passes
+    //
     public Cursor getBugDetails(int id) {
         SQLiteDatabase db = this.getReadableDatabase();
 
@@ -100,4 +102,17 @@ public class BugSQLiteOpenHelper extends SQLiteOpenHelper {
             return null;
         }
     }
+
+    public Cursor searchBugDatabase(String query){
+        SQLiteDatabase db = this.getReadableDatabase();
+
+        Cursor searchCursor = db.query(BUG_TABLE_TITLE,
+                BUG_COLUMNS,
+                COL_NUM_LEGS + " LIKE ? OR " + COL_COLOR + " LIKE ? ",
+                new String[]{"%"+query+"%", "%"+query+"%"},
+                null, null, null, null);
+
+        return searchCursor;
+    }
+
 }

@@ -20,6 +20,10 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
+    CursorAdapter bugCursorAdapter;
+    CursorAdapter bugSearchCursorAdapter;
+    Cursor mainCursor;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,23 +34,24 @@ public class MainActivity extends AppCompatActivity {
         dbSetup.getReadableDatabase();
 
         //Instantiates the MainActivity ListView allowing it to be called, customized, and populated.
-        ListView mainList = (ListView)findViewById(R.id.main_list_view);
+        ListView mainList = (ListView) findViewById(R.id.main_list_view);
 
         //Creates a Cursor populated by getBugs Method in BugSQLiteOpenHelper Class.
-        final Cursor mainCursor = new BugSQLiteOpenHelper(this).getBugs();
+        mainCursor = new BugSQLiteOpenHelper(this).getBugs();
 
         //Custom CursorAdapter which uses data held by mainCursor to populate custom ListView layouts.
-        CursorAdapter bugCursorAdapter = new CursorAdapter(MainActivity.this, mainCursor, 0) {
+        bugCursorAdapter = new CursorAdapter(MainActivity.this, mainCursor, 0) {
             //LayoutInflater links a custom XML layout to the parent XML layout of MainActivity.
             @Override
             public View newView(Context context, Cursor mainCursor, ViewGroup parent) {
                 return LayoutInflater.from(context).inflate(R.layout.main_list_format, parent, false);
             }
+
             @Override
             public void bindView(View view, Context context, Cursor mainCursor) {
                 //Provides variables to hold information to populate the identified fields in the main_list_format layout.
-                TextView commonNameTV = (TextView)view.findViewById(R.id.main_list_common);
-                TextView latinNameTV = (TextView)view.findViewById(R.id.main_list_latin);
+                TextView commonNameTV = (TextView) view.findViewById(R.id.main_list_common);
+                TextView latinNameTV = (TextView) view.findViewById(R.id.main_list_latin);
                 //Populates TextViews using data in the specified columns of the database held in mainCursor.
                 commonNameTV.setText(mainCursor.getString(mainCursor.getColumnIndex(BugSQLiteOpenHelper.COL_COMMON_NAME)));
                 latinNameTV.setText(mainCursor.getString(mainCursor.getColumnIndex(BugSQLiteOpenHelper.COL_LATIN_NAME)));
@@ -96,24 +101,62 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(detailsIntent);
             }
         });
+        handleSearchIntent(getIntent());
     }
 
-//    related to search function
     @Override
-    public boolean onCreateOptionsMenu (Menu menu) {
+    protected void onNewIntent(Intent intent) {
+        handleSearchIntent(intent);
+        super.onNewIntent(intent);
+    }
+
+    //    related to search function
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater menuInflater = getMenuInflater();
         menuInflater.inflate(R.menu.menu_search, menu);
 
-        SearchManager searchManager = (SearchManager)getSystemService(Context.SEARCH_SERVICE);
-        SearchView searchView = (SearchView)menu.findItem(R.id.menu_search).getActionView();
+        SearchManager searchManager = (SearchManager) getSystemService(Context.SEARCH_SERVICE);
+        SearchView searchView = (SearchView) menu.findItem(R.id.menu_search).getActionView();
         searchView.setSearchableInfo(searchManager.getSearchableInfo(getComponentName()));
 
         return true;
     }
+
+    private void handleSearchIntent(Intent intent) {
+        if (Intent.ACTION_SEARCH.equals(intent.getAction())) {
+            String query = intent.getStringExtra(SearchManager.QUERY);
+            Cursor searchCursor = BugSQLiteOpenHelper.getInstance(MainActivity.this).searchBugDatabase(query);
+
+            ListView mainList = (ListView) findViewById(R.id.main_list_view);
+            if (bugSearchCursorAdapter == null) {
+                bugSearchCursorAdapter = new CursorAdapter(MainActivity.this, searchCursor, 0) {
+                    @Override
+                    public View newView(Context context, Cursor searchCursor, ViewGroup parent) {
+                        return LayoutInflater.from(context).inflate(R.layout.main_list_format, parent, false);
+                    }
+
+                    @Override
+                    public void bindView(View view, Context context, Cursor searchCursor) {
+                        //Provides variables to hold information to populate the identified fields in the main_list_format layout.
+                        TextView commonNameTV = (TextView) view.findViewById(R.id.main_list_common);
+                        TextView latinNameTV = (TextView) view.findViewById(R.id.main_list_latin);
+                        //Populates TextViews using data in the specified columns of the database held in searchCursor.
+                        commonNameTV.setText(searchCursor.getString(searchCursor.getColumnIndex(BugSQLiteOpenHelper.COL_COMMON_NAME)));
+                        latinNameTV.setText(searchCursor.getString(searchCursor.getColumnIndex(BugSQLiteOpenHelper.COL_LATIN_NAME)));
+                    }
+                };
+                mainList.setAdapter(bugSearchCursorAdapter);
+            } else {
+                bugSearchCursorAdapter.swapCursor(searchCursor);
+            }
+        }
+    }
 }
-//    SearchManager searchManager =
-//            (SearchManager) getSystemService(Context.SEARCH_SERVICE);
-//    SearchView searchView =
-//            (SearchView) menu.findItem(R.id.search).getActionView();
-//    searchView.setSearchableInfo(
-//        searchManager.getSearchableInfo(getComponentName()));
+
+//                        .this,
+//                        android.R.layout.simple_list_item_1,
+//                        searchCursor,
+//                        new String[]{BugSQLiteOpenHelper.COL_COMMON_NAME},
+//                        new int[]{android.R.id.text1},
+//                        0);

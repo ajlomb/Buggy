@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Project2Buggy</string>
+    <string name="search_hint">Search Bug Traits</string>
+    <string name="search_label">Buggy</string>
 </resources>
