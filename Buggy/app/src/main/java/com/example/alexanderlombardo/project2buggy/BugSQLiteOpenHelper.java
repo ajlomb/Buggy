@@ -119,7 +119,7 @@ public class BugSQLiteOpenHelper extends SQLiteOpenHelper {
         SQLiteDatabase db = this.getReadableDatabase();
 
         Cursor insectCursor = db.query(BUG_TABLE_TITLE,
-                new String[]{COL_COMMON_NAME, COL_LATIN_NAME, COL_NUM_LEGS, COL_WINGS, COL_COLOR, COL_DESCRIPTION},
+                new String[]{COL_ID, COL_COMMON_NAME, COL_LATIN_NAME, COL_NUM_LEGS, COL_WINGS, COL_COLOR, COL_DESCRIPTION},
                 COL_ID+" = ?",
                 new String[]{String.valueOf(id)},
                 null, null, null, null);
@@ -137,7 +137,7 @@ public class BugSQLiteOpenHelper extends SQLiteOpenHelper {
         Cursor searchCursor = db.query(BUG_TABLE_TITLE,
                 BUG_COLUMNS,
                 COL_COMMON_NAME + " LIKE ? OR " + COL_LATIN_NAME + " LIKE ? OR " + COL_NUM_LEGS + " LIKE ? OR " + COL_COLOR + " LIKE ? ",
-                new String[]{"%"+query+"%", "%"+query+"%", "%"+query+"%"},
+                new String[]{"%"+query+"%", "%"+query+"%", "%"+query+"%", "%"+query+"%"},
                 null, null, null, null);
 
         return searchCursor;
