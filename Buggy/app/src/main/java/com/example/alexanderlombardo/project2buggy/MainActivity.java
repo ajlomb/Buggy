@@ -99,8 +99,9 @@ public class MainActivity extends AppCompatActivity {
                 Intent detailsIntent = new Intent(MainActivity.this, DetailsActivity.class);
 
                 Cursor selectedCursor = (Cursor) parent.getAdapter().getItem(position);
-//                mainCursor.moveToPosition(position);
+
                 detailsIntent.putExtra("id", selectedCursor.getInt(selectedCursor.getColumnIndex(BugSQLiteOpenHelper.COL_ID)));
+
                 startActivity(detailsIntent);
             }
         });
