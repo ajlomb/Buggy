@@ -51,34 +51,6 @@ public class BugSQLiteOpenHelper extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
         db.execSQL(CREATE_BUG_TABLE);
-
-        //Seeds the database using the insertBugData Method in the BugSQLiteOpenHelper Class.
-        insertBugData(1, "Honey Bee",
-        "Apis mellifera", "6", "1", "black yellow",
-        "99% of bees you've seen are hard working ladies.");
-        insertBugData(2, "Praying Mantis",
-        "Stagmomantis californica", "6", "1", "yellow green brown",
-        "Also a style of kung-fu");
-        insertBugData(3, "Black Widow Spider",
-        "Latrodectus hesperus", "8", "0", "black red",
-        "The western black widow spider or western widow, is a venomous spider species found in western regions of North America.");
-        insertBugData(4, "House Cricket",
-        "Acheta domestica", "6", "1", "brown grey",
-        "The house cricket is typically gray or brownish in color, growing to 16–21 millimetres (0.63–0.83 in) in length.");
-        insertBugData(5, "Tiger Swallowtail",
-        "Papilio glaucus", "6", "1", "black yellow",
-        "a species of swallowtail butterfly native to eastern North America");
-        insertBugData(6, "Earthworm",
-        "Lumbricus terrestris", "0", "0", "brown pink",
-        "An earthworm is a tube-shaped, segmented worm found in the phylum Annelida. Earthworms are commonly found living in soil, feeding on live and dead organic matter.");
-        insertBugData(7, "Black Bean Aphid",
-        "Aphis fabae", "6", "1", "black",
-        "Other common names include blackfly, bean aphid and beet leaf aphid. In the warmer months of the year it is found in large numbers on the undersides of leaves and on the growing tips of host plants, including various agricultural crops and many wild and ornamental plants.");
-        insertBugData(8, "Green Aphid",
-        "Acyrthosiphon pisum", "6", "1", "green",
-        "Acyrthosiphon pisum, commonly known as the pea aphid (and colloquially known as the green dolphin, pea louse, and clover louse), is a sap-sucking insect in the Aphididae family.");
-
-        //    db.close();
     }
 
     //Supposedly upgrades the database if there are changes.
@@ -102,7 +74,6 @@ public class BugSQLiteOpenHelper extends SQLiteOpenHelper {
         values.put("DESCRIPT", bugDescript);
 
         db.insert("BUG_TABLE", null, values);
-     //   db.close();
     }
 
     //Called on in MainActivity
