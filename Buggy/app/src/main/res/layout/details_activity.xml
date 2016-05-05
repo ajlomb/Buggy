@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/details_image_view"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:padding="5dp"
+        />
+
+    <TextView
+        android:id="@+id/details_common_name"
+        android:layout_width="wrap_content"
+        android:layout_height="35dp"
+        android:text="Common Name"
+        android:padding="5dp"
+        android:textSize="15sp"
+        android:layout_gravity="right"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <TextView
+        android:id="@+id/details_latin_name"
+        android:layout_width="wrap_content"
+        android:layout_height="35dp"
+        android:text="Latin Name"
+        android:padding="5dp"
+        android:textSize="15sp"
+        android:layout_below="@+id/details_common_name"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <TextView
+        android:id="@+id/details_num_legs"
+        android:layout_width="wrap_content"
+        android:layout_height="35dp"
+        android:text="Number of Legs"
+        android:padding="5dp"
+        android:textSize="15sp"
+        android:layout_below="@+id/details_latin_name"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <TextView
+        android:id="@+id/details_wings"
+        android:layout_width="wrap_content"
+        android:layout_height="35dp"
+        android:text="Wings: yes/no"
+        android:padding="5dp"
+        android:textSize="15sp"
+        android:layout_below="@+id/details_num_legs"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <TextView
+        android:id="@+id/details_color"
+        android:layout_width="wrap_content"
+        android:layout_height="35dp"
+        android:text="Common Colors"
+        android:padding="5dp"
+        android:textSize="15sp"
+        android:layout_below="@id/details_wings"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"/>
+
+    <TextView
+        android:id="@+id/details_details_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Details and stuff"
+        android:padding="5dp"
+        android:textSize="15sp"
+        android:layout_below="@+id/details_image_view"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"/>
+
+</RelativeLayout>

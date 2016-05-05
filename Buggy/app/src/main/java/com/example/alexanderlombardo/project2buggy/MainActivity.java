@@ -16,6 +16,7 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -59,7 +60,6 @@ public class MainActivity extends AppCompatActivity {
         //Setting butCursorAdapter (instantiated above) to the ListView in the MainActivity called mainList;
         //  allows list to be populated by data passed through the custom CursorAdapter.
         mainList.setAdapter(bugCursorAdapter);
-        //Seeds the database using the insertBugData Method in the BugSQLiteOpenHelper Class.
 
         //Dumps a log of the current data held in the mainCursor to the log, does nothing to affect the app while running.
         //DatabaseUtils.dumpCursor(mainCursor);
@@ -71,8 +71,9 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Intent detailsIntent = new Intent(MainActivity.this, DetailsActivity.class);
+
                 mainCursor.moveToPosition(position);
-                detailsIntent.putExtra("id", mainCursor.getInt(mainCursor.getColumnIndex(BugSQLiteOpenHelper.COL_ID)));
+                detailsIntent.putExtra("id", mainCursor.getInt(mainCursor.getColumnIndexOrThrow(BugSQLiteOpenHelper.COL_ID)));
                 startActivity(detailsIntent);
             }
         });
@@ -103,7 +104,11 @@ public class MainActivity extends AppCompatActivity {
             String query = intent.getStringExtra(SearchManager.QUERY);
             Cursor searchCursor = BugSQLiteOpenHelper.getInstance(MainActivity.this).searchBugDatabase(query);
 
-            ListView mainList = (ListView) findViewById(R.id.main_list_view);
+            if (searchCursor.getCount() == 0){
+                searchCursor = BugSQLiteOpenHelper.getInstance(MainActivity.this).getBugs();
+                Toast.makeText(MainActivity.this, "No valid search results, try another trait?", Toast.LENGTH_LONG).show();
+            }
+            ListView mainList = (ListView)findViewById(R.id.main_list_view);
             if (bugSearchCursorAdapter == null) {
                 bugSearchCursorAdapter = new CursorAdapter(MainActivity.this, searchCursor, 0) {
                     @Override
@@ -128,10 +133,3 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 }
-
-//                        .this,
-//                        android.R.layout.simple_list_item_1,
-//                        searchCursor,
-//                        new String[]{BugSQLiteOpenHelper.COL_COMMON_NAME},
-//                        new int[]{android.R.id.text1},
-//                        0);
