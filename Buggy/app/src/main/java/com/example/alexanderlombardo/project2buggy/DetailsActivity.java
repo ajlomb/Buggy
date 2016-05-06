@@ -52,8 +52,8 @@ public class DetailsActivity extends AppCompatActivity {
             }
             detailColors.setText("Colors: "+captureColors);
             numLegs.setText("Legs: "+captureNumLegs);
-            commonName.setText(captureCommonName);
-            latinName.setText(captureLatinName);
+            commonName.setText("Common Name: " +captureCommonName);
+            latinName.setText("Binomial Name: " +captureLatinName);
             detailDescription.setText(captureDescript);
 
             switch(captureId) {
@@ -76,9 +76,6 @@ public class DetailsActivity extends AppCompatActivity {
                 case 9:     bugImage.setImageResource(R.drawable.ladybeetle);
                     break;
             }
-
         }
-
     }
-
 }

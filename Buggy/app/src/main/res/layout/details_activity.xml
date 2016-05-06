@@ -14,9 +14,9 @@
     <TextView
         android:id="@+id/details_common_name"
         android:layout_width="wrap_content"
-        android:layout_height="38dp"
-        android:padding="3dp"
-        android:textSize="18sp"
+        android:layout_height="70dp"
+        android:padding="5dp"
+        android:textSize="16sp"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentTop="true"
@@ -26,9 +26,9 @@
     <TextView
         android:id="@+id/details_latin_name"
         android:layout_width="wrap_content"
-        android:layout_height="44dp"
-        android:padding="3dp"
-        android:textSize="18sp"
+        android:layout_height="70dp"
+        android:padding="5dp"
+        android:textSize="16sp"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
         android:layout_below="@+id/details_common_name"
@@ -38,9 +38,35 @@
     <TextView
         android:id="@+id/details_num_legs"
         android:layout_width="wrap_content"
-        android:layout_height="30dp"
+        android:layout_height="35dp"
         android:padding="3dp"
-        android:textSize="18sp"
+        android:textSize="16sp"
+        android:textAlignment="center"
+        android:gravity="center_vertical"
+        android:layout_alignParentLeft="true"
+        android:layout_alignTop="@+id/details_wings"
+        android:layout_toLeftOf="@+id/details_wings"
+        android:layout_toStartOf="@+id/details_wings" />
+
+    <TextView
+        android:id="@+id/details_wings"
+        android:layout_width="wrap_content"
+        android:layout_height="35dp"
+        android:padding="3dp"
+        android:textSize="16sp"
+        android:gravity="center_vertical"
+        android:layout_alignRight="@+id/details_color"
+        android:layout_alignEnd="@+id/details_color"
+        android:layout_below="@+id/details_color"
+        android:layout_toRightOf="@+id/details_image_view"
+        android:layout_toEndOf="@+id/details_image_view" />
+
+    <TextView
+        android:id="@+id/details_color"
+        android:layout_width="wrap_content"
+        android:layout_height="60dp"
+        android:padding="3dp"
+        android:textSize="16sp"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
         android:layout_below="@+id/details_latin_name"
@@ -48,37 +74,16 @@
         android:layout_toEndOf="@+id/details_image_view" />
 
     <TextView
-        android:id="@+id/details_wings"
-        android:layout_width="wrap_content"
-        android:layout_height="30dp"
-        android:padding="3dp"
-        android:textSize="18sp"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:layout_below="@+id/details_num_legs"
-        android:layout_toRightOf="@+id/details_image_view"
-        android:layout_toEndOf="@+id/details_image_view" />
-
-    <TextView
-        android:id="@+id/details_color"
-        android:layout_width="wrap_content"
-        android:layout_height="58dp"
-        android:padding="3dp"
-        android:textSize="18sp"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:layout_below="@+id/details_wings"
-        android:layout_toRightOf="@+id/details_image_view"
-        android:layout_toEndOf="@+id/details_image_view" />
-
-    <TextView
         android:id="@+id/details_details_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:padding="5dp"
+        android:paddingTop="3dp"
+        android:paddingBottom="5dp"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp"
         android:textSize="16sp"
         android:scrollbars="vertical"
-        android:layout_below="@+id/details_image_view"
+        android:layout_below="@+id/details_num_legs"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_alignParentBottom="true"
