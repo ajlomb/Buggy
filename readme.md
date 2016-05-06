@@ -5,19 +5,19 @@ Buggy, Insect Identifier
 
 
 Main activity upon launch:
-![](MainActivity.jpg)
+![](ReadmeImages/MainActivity.jpg)
 
 Main page with search queried:
-![](MainSearch.jpg)
+![](ReadmeImages/MainSearch.jpg)
 
 Details page from clicked search result:
-![](DetailsActivity.jpg)
+![](ReadmeImages/DetailsActivity.jpg)
 
 Details page after 'favorites' clicked:
-![](DetailsFavorited.jpg)
+![](ReadmeImages/DetailsFavorited.jpg)
 
 Data structure/ERD:
-![](ERDandTable.jpg)
+![](ReadmeImages/ERDandTable.jpg)
 
 	MainActivity UserStories	
 User	Opens app	Home page, Displays insect of the day(IotD) at bottom, above search return field

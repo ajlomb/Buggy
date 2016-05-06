@@ -11,6 +11,9 @@
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:textSize="22sp"
+        android:textColor="#01182d"
+        android:background="#80c7b64f"
+        android:padding="5dp"
         />
 
     <TextView
@@ -21,6 +24,9 @@
         android:textSize="22sp"
         android:textAlignment="textEnd"
         android:layout_gravity="end"
+        android:textColor="#01182d"
+        android:background="#80c7b64f"
+        android:padding="5dp"
         />
 
 

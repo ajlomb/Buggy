@@ -46,12 +46,12 @@ public class DetailsActivity extends AppCompatActivity {
             detailDescription.setMovementMethod(new ScrollingMovementMethod());
 
             if(captureWings.equals("1")){
-                detailWings.setText("This bug has wings");
+                detailWings.setText("This bug has wings!");
             } else {
-                detailWings.setText("This bug has no wings");
+                detailWings.setText("No wings.");
             }
-            detailColors.setText(captureColors);
-            numLegs.setText(captureNumLegs);
+            detailColors.setText("Colors: "+captureColors);
+            numLegs.setText("Legs: "+captureNumLegs);
             commonName.setText(captureCommonName);
             latinName.setText(captureLatinName);
             detailDescription.setText(captureDescript);
