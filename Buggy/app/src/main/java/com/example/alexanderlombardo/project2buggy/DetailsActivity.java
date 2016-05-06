@@ -3,6 +3,7 @@ package com.example.alexanderlombardo.project2buggy;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.text.method.ScrollingMovementMethod;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -40,6 +41,8 @@ public class DetailsActivity extends AppCompatActivity {
             TextView detailWings = (TextView)findViewById(R.id.details_wings);
             TextView detailColors = (TextView)findViewById(R.id.details_color);
             TextView detailDescription = (TextView)findViewById(R.id.details_details_text);
+
+            detailDescription.setMovementMethod(new ScrollingMovementMethod());
 
             if(captureWings.equals("1")){
                 detailWings.setText("This bug has wings");

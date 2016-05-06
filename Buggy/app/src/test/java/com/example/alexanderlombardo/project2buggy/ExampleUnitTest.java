@@ -1,15 +1,45 @@
 package com.example.alexanderlombardo.project2buggy;
 
-import org.junit.Test;
-
-import static org.junit.Assert.*;
-
-/**
- * To work on unit tests, switch the Test Artifact in the Build Variants view.
- */
 public class ExampleUnitTest {
-    @Test
-    public void addition_isCorrect() throws Exception {
-        assertEquals(4, 2 + 2);
-    }
+//    private MockContext context;
+//
+//    @Test
+//    protected void setUp() throws Exception {
+//        super.setUp();
+//        context = getContext();
+//    }
+//    @Test
+//    public void test() throws Exception {
+//        Instrumentation instrumentation = new Instrumentation();
+//        instrumentation.runOnMainSync(new Runnable() {
+//            @Override
+//            public void run() {
+//                int size = BugSQLiteOpenHelper.getInstance(context).getBugs().getCount();
+//                assertEquals(100, size);
+//                Log.d("alex", size+"");
+//            }
+//        });
+//    }
+//    @Test
+//    public void test1() throws Exception {
+//        Instrumentation instrumentation = new Instrumentation();
+//        instrumentation.runOnMainSync(new Runnable() {
+//            @Override
+//            public void run() {
+//                Intent intent = new Intent (context, DetailsActivity.class);
+//                context.startActivity(intent);
+//                assertNotNull(BugSQLiteOpenHelper.getInstance(null));
+//            }
+//        });
+//    }
+//
+//    @Test
+//    public void test2() throws Exception {
+//        Instrumentation instrumentation = new Instrumentation();
+//        instrumentation.runOnMainSync(new Runnable() {
+//            @Override
+//            public void run() {
+//            }
+//        });
+//    }
 }

@@ -3,6 +3,9 @@ apply plugin: 'com.android.application'
 android {
     compileSdkVersion 23
     buildToolsVersion "23.0.3"
+    testOptions {
+        unitTests.returnDefaultValues = true
+    }
 
     defaultConfig {
         applicationId "com.example.alexanderlombardo.project2buggy"
