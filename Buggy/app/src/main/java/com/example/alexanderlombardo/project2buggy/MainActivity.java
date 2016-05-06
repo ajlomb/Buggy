@@ -57,10 +57,6 @@ public class MainActivity extends AppCompatActivity {
             }
         };
 
-        //Setting butCursorAdapter (instantiated above) to the ListView in the MainActivity called mainList;
-        //  allows list to be populated by data passed through the custom CursorAdapter.
-        mainList.setAdapter(bugCursorAdapter);
-
         //Seeds the database using the insertBugData Method in the BugSQLiteOpenHelper Class.
         dbSetup.insertBugData(1, "Honey Bee",
                 "Apis mellifera", "6", "1", "black yellow",
@@ -89,7 +85,17 @@ public class MainActivity extends AppCompatActivity {
         dbSetup.insertBugData(8, "Pea Aphid",
                 "Acyrthosiphon pisum", "6", "1", "green",
                 "Acyrthosiphon pisum, commonly known as the pea aphid (and colloquially known as the green dolphin, pea louse, and clover louse), is a sap-sucking insect in the Aphididae family. It feeds on several species of legumes (plant family Fabaceae) worldwide, including forage crops, such as pea, clover, alfalfa, and broad bean, and ranks among the aphid species of major agronomical importance. The pea aphid is a model organism for biological study whose genome has been sequenced and annotated.");
+        dbSetup.insertBugData(9, "Lady Bug",
+                "Harmonia axyridis", "6", "1", "red black yellow orange",
+                "Harmonia axyridis is a large coccinellid beetle. Its colour ranges from yellow-orange to black, and the number of spots between none and 22. It is native to eastern Asia, but has been artificially introduced to North America and Europe to control aphids and scale insects. It is now common, well known, and spreading in those regions, and has also established in South Africa and widely across South America.\n" +
+                "\n" + "It is commonly known as the harlequin ladybird (because it occurs in numerous colour forms). It is also known in North America as the Ladybug, and (because it invades homes in October in preparation for overwintering) as Halloween lady beetle. In Japan, it is not generally distinguished from the seven-spot ladybird which is also common there.\n" +
+                "\n" + "When the species first arrived in the UK, it was labelled in jest as \"the many-named ladybird\", because among the names listed were: multivariate, southern, Japanese, and pumpkin ladybird.");
 
+
+
+        //Setting butCursorAdapter (instantiated above) to the ListView in the MainActivity called mainList;
+        //  allows list to be populated by data passed through the custom CursorAdapter.
+        mainList.setAdapter(bugCursorAdapter);
 
         //Dumps a log of the current data held in the mainCursor to the log, does nothing to affect the app while running.
         //DatabaseUtils.dumpCursor(mainCursor);
@@ -134,11 +140,14 @@ public class MainActivity extends AppCompatActivity {
             String query = intent.getStringExtra(SearchManager.QUERY);
             Cursor searchCursor = BugSQLiteOpenHelper.getInstance(MainActivity.this).searchBugDatabase(query);
 
+            //Repopulates the ListView with all entries from the database when a search returns without any entries.
             if (searchCursor.getCount() == 0){
                 searchCursor = BugSQLiteOpenHelper.getInstance(MainActivity.this).getBugs();
                 Toast.makeText(MainActivity.this, "No valid search results, try another trait?", Toast.LENGTH_LONG).show();
             }
+
             ListView mainList = (ListView)findViewById(R.id.main_list_view);
+
             if (bugSearchCursorAdapter == null) {
                 bugSearchCursorAdapter = new CursorAdapter(MainActivity.this, searchCursor, 0) {
                     @Override

@@ -42,6 +42,7 @@ public class DetailsActivity extends AppCompatActivity {
             TextView detailColors = (TextView)findViewById(R.id.details_color);
             TextView detailDescription = (TextView)findViewById(R.id.details_details_text);
 
+            //With the XML "scrollbar" attribute, allow scrolling of married TextView when there is more text than the size of the view allows
             detailDescription.setMovementMethod(new ScrollingMovementMethod());
 
             if(captureWings.equals("1")){
@@ -71,6 +72,8 @@ public class DetailsActivity extends AppCompatActivity {
                 case 7:     bugImage.setImageResource(R.drawable.blackaphid);
                     break;
                 case 8:     bugImage.setImageResource(R.drawable.greenaphid);
+                    break;
+                case 9:     bugImage.setImageResource(R.drawable.ladybeetle);
                     break;
             }
 
