@@ -90,7 +90,119 @@ public class MainActivity extends AppCompatActivity {
                 "Harmonia axyridis is a large coccinellid beetle. Its colour ranges from yellow-orange to black, and the number of spots between none and 22. It is native to eastern Asia, but has been artificially introduced to North America and Europe to control aphids and scale insects. It is now common, well known, and spreading in those regions, and has also established in South Africa and widely across South America.\n" +
                 "\n" + "It is commonly known as the harlequin ladybird (because it occurs in numerous colour forms). It is also known in North America as the Ladybug, and (because it invades homes in October in preparation for overwintering) as Halloween lady beetle. In Japan, it is not generally distinguished from the seven-spot ladybird which is also common there.\n" +
                 "\n" + "When the species first arrived in the UK, it was labelled in jest as \"the many-named ladybird\", because among the names listed were: multivariate, southern, Japanese, and pumpkin ladybird.");
-
+        dbSetup.insertBugData(10, "Baby Got Back",
+                "Sir Mixus A-lot-us", "3", "0", "rainbow",
+                "Oh, my, God Becky, look at her butt\n" +
+                        "It is so big, she looks like\n" +
+                        "One of those rap guys' girlfriends.\n" +
+                        "But, ya know, who understands those rap guys?\n" +
+                        "They only talk to her, because,\n" +
+                        "She looks like a total prostitute, 'kay?\n" +
+                        "I mean, her butt, is just so big\n" +
+                        "I can't believe it's just so round, it's like out there\n" +
+                        "I mean gross, look\n" +
+                        "She's just so, black\n" +
+                        "\n" +
+                        "I like big butts and I can not lie\n" +
+                        "You other brothers can't deny\n" +
+                        "That when a girl walks in with an itty bitty waist\n" +
+                        "And a round thing in your face\n" +
+                        "You get sprung, want to pull up tough\n" +
+                        "'Cause you notice that butt was stuffed\n" +
+                        "Deep in the jeans she's wearing\n" +
+                        "I'm hooked and I can't stop staring\n" +
+                        "Oh baby, I want to get wit'cha\n" +
+                        "And take your picture\n" +
+                        "My homeboys tried to warn me\n" +
+                        "But with that butt you got makes (me so horny)\n" +
+                        "Ooh, Rump-o'-smooth-skin\n" +
+                        "You say you want to get in my Benz?\n" +
+                        "Well, use me, use me\n" +
+                        "'Cause you ain't that average groupie\n" +
+                        "I've seen her dancin'\n" +
+                        "To hell with romancin'\n" +
+                        "She's sweat, wet,\n" +
+                        "Got it goin' like a turbo 'Vette\n" +
+                        "I'm tired of magazines\n" +
+                        "Sayin' flat butts are the thing\n" +
+                        "Take the average black man and ask him that\n" +
+                        "She gotta pack much back\n" +
+                        "So, fellas (yeah) Fellas (yeah)\n" +
+                        "Has your girlfriend got the butt? (hell yeah)\n" +
+                        "Tell 'em to shake it (shake it) shake it (shake it)\n" +
+                        "Shake that healthy butt\n" +
+                        "Baby got back (L.A. fits with the Oakland booty)\n" +
+                        "\n" +
+                        "Baby got back (L.A. fits with the Oakland booty)\n" +
+                        "\n" +
+                        "I like 'em round, and big\n" +
+                        "And when I'm throwin' a gig\n" +
+                        "I just can't help myself, I'm actin' like an animal\n" +
+                        "Now here's my scandal\n" +
+                        "I want to get you home\n" +
+                        "And ugh, double-up, ugh, ugh\n" +
+                        "I ain't talkin' bout Playboy\n" +
+                        "'Cause silicone parts are made for toys\n" +
+                        "I want 'em real thick and juicy\n" +
+                        "So find that juicy double\n" +
+                        "Mix-a-Lot's in trouble\n" +
+                        "Beggin' for a piece of that bubble\n" +
+                        "So I'm lookin' at rock videos\n" +
+                        "Knock-kneed bimbos walkin' like hoes\n" +
+                        "You can have them bimbos\n" +
+                        "I'll keep my women like Flo Jo\n" +
+                        "A word to the thick soul sistas, I want to get with ya\n" +
+                        "I won't cuss or hit ya\n" +
+                        "But I gotta be straight when I say I want to fuck\n" +
+                        "Til the break of dawn\n" +
+                        "Baby got it goin' on\n" +
+                        "A lot of simps won't like this song\n" +
+                        "'Cause them punks like to hit it and quit it\n" +
+                        "And I'd rather stay and play\n" +
+                        "'Cause I'm long, and I'm strong\n" +
+                        "And I'm down to get the friction on\n" +
+                        "So, ladies (Yeah) Ladies (Yeah)\n" +
+                        "If you want to role in my Mercedes (Yeah)\n" +
+                        "Then turn around, stick it out\n" +
+                        "Even white boys got to shout\n" +
+                        "Baby got back\n" +
+                        "\n" +
+                        "Baby got back\n" +
+                        "Yeah, baby, when it comes to females\n" +
+                        "Cosmo ain't got nothin'\n" +
+                        "To do with my selection\n" +
+                        "Thirty six-twenty- four-thirty six\n" +
+                        "Ha ha, only if she's 5'3\n" +
+                        "\n" +
+                        "So your girlfriend rolls a Honda, playin' workout tapes by Fonda\n" +
+                        "But Fonda ain't got a motor in the back of her Honda\n" +
+                        "My anaconda don't want none\n" +
+                        "Unless you've got buns, hon\n" +
+                        "You can do side bends or sit-ups\n" +
+                        "But please don't lose that butt\n" +
+                        "Some brothers want to play that hard role\n" +
+                        "And tell you that the butt ain't gol'\n" +
+                        "So they toss it and leave it\n" +
+                        "And I pull up quick to retrieve it\n" +
+                        "So Cosmo says you're fat\n" +
+                        "Well I ain't down with that\n" +
+                        "'Cause your waist is small and your curves are kickin'\n" +
+                        "And I'm thinkin' bout stickin'\n" +
+                        "To the beanpole dames in the magazines\n" +
+                        "You ain't it, Miss Thing\n" +
+                        "Give me a sista, I can't resist her\n" +
+                        "Red beans and rice didn't miss her\n" +
+                        "Some knucklehead tried to dis\n" +
+                        "'Cause his girls are on my list\n" +
+                        "He had game but he chose to hit 'em\n" +
+                        "And I pull up quick to get wit 'em\n" +
+                        "So ladies, if the butt is round,\n" +
+                        "And you want a triple X throw down,\n" +
+                        "Dial 1-900-MIXALOT\n" +
+                        "And kick them nasty thoughts\n" +
+                        "Baby got back\n" +
+                        "\n" +
+                        "Baby got back");
 
 
         //Setting butCursorAdapter (instantiated above) to the ListView in the MainActivity called mainList;
@@ -143,7 +255,7 @@ public class MainActivity extends AppCompatActivity {
             //Repopulates the ListView with all entries from the database when a search returns without any entries.
             if (searchCursor.getCount() == 0){
                 searchCursor = BugSQLiteOpenHelper.getInstance(MainActivity.this).getBugs();
-                Toast.makeText(MainActivity.this, "No valid search results, try another trait?", Toast.LENGTH_LONG).show();
+                Toast.makeText(MainActivity.this, "No valid search results; try a name, color, or number of legs?", Toast.LENGTH_LONG).show();
             }
 
             ListView mainList = (ListView)findViewById(R.id.main_list_view);
@@ -160,9 +272,12 @@ public class MainActivity extends AppCompatActivity {
                         //Provides variables to hold information to populate the identified fields in the main_list_format layout.
                         TextView commonNameTV = (TextView) view.findViewById(R.id.main_list_common);
                         TextView latinNameTV = (TextView) view.findViewById(R.id.main_list_latin);
+         //               ImageView mainImage = (ImageView) view.findViewById(R.id.main_list_image);
+
                         //Populates TextViews using data in the specified columns of the database held in searchCursor.
-                        commonNameTV.setText(searchCursor.getString(searchCursor.getColumnIndex(BugSQLiteOpenHelper.COL_COMMON_NAME)));
-                        latinNameTV.setText(searchCursor.getString(searchCursor.getColumnIndex(BugSQLiteOpenHelper.COL_LATIN_NAME)));
+                        commonNameTV.setText("Common Name: " +searchCursor.getString(searchCursor.getColumnIndex(BugSQLiteOpenHelper.COL_COMMON_NAME)));
+                        latinNameTV.setText("Latin Name: " +searchCursor.getString(searchCursor.getColumnIndex(BugSQLiteOpenHelper.COL_LATIN_NAME)));
+         //               mainImage.setImageDrawable();
                     }
                 };
                 mainList.setAdapter(bugSearchCursorAdapter);

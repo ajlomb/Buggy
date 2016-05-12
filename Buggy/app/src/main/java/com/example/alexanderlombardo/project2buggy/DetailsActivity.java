@@ -75,6 +75,8 @@ public class DetailsActivity extends AppCompatActivity {
                     break;
                 case 9:     bugImage.setImageResource(R.drawable.ladybeetle);
                     break;
+                case 10:    bugImage.setImageResource(R.drawable.bee);
+                    break;
             }
         }
     }

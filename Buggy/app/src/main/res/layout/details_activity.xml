@@ -9,6 +9,8 @@
         android:layout_height="200dp"
         android:padding="5dp"
         android:background="#000000"
+        android:contentDescription="Image of the selected bug"
+
        />
 
     <TextView
@@ -29,6 +31,9 @@
         android:layout_height="70dp"
         android:padding="5dp"
         android:textSize="16sp"
+        android:nextFocusForward="@+id/details_details_text"
+        android:nextFocusDown="@+id/details_details_text"
+        android:nextFocusRight="@+id/details_details_text"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
         android:layout_below="@+id/details_common_name"
@@ -43,6 +48,7 @@
         android:textSize="16sp"
         android:textAlignment="center"
         android:gravity="center_vertical"
+        android:focusable="false"
         android:layout_alignParentLeft="true"
         android:layout_alignTop="@+id/details_wings"
         android:layout_toLeftOf="@+id/details_wings"
@@ -73,6 +79,7 @@
         android:layout_toRightOf="@+id/details_image_view"
         android:layout_toEndOf="@+id/details_image_view" />
 
+
     <TextView
         android:id="@+id/details_details_text"
         android:layout_width="wrap_content"
@@ -83,6 +90,7 @@
         android:paddingRight="5dp"
         android:textSize="16sp"
         android:scrollbars="vertical"
+        android:focusable="true"
         android:layout_below="@+id/details_num_legs"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
