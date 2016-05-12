@@ -48,12 +48,12 @@ public class DetailsActivity extends AppCompatActivity {
             if(captureWings.equals("1")){
                 detailWings.setText("This bug has wings!");
             } else {
-                detailWings.setText("No wings.");
+                detailWings.setText("No wings");
             }
             detailColors.setText("Colors: "+captureColors);
             numLegs.setText("Legs: "+captureNumLegs);
-            commonName.setText("Common Name: " +captureCommonName);
-            latinName.setText("Binomial Name: " +captureLatinName);
+            commonName.setText("Common Name: \n" +captureCommonName);
+            latinName.setText("Binomial Name: \n" +captureLatinName);
             detailDescription.setText(captureDescript);
 
             switch(captureId) {
@@ -75,9 +75,10 @@ public class DetailsActivity extends AppCompatActivity {
                     break;
                 case 9:     bugImage.setImageResource(R.drawable.ladybeetle);
                     break;
-                case 10:    bugImage.setImageResource(R.drawable.bee);
-                    break;
+                case 10:    bugImage.setImageResource(R.drawable.avulgare);
             }
         }
     }
+
+
 }

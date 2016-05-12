@@ -60,149 +60,61 @@ public class MainActivity extends AppCompatActivity {
         //Seeds the database using the insertBugData Method in the BugSQLiteOpenHelper Class.
         dbSetup.insertBugData(1, "Honey Bee",
                 "Apis mellifera", "6", "1", "black yellow",
-                "The western honey bee or European honey bee (Apis mellifera) is a species of honey bee. The genus name Apis is Latin for \"bee\", and mellifera means \"honey-bearing\". It has a defined social caste system and complex communication behaviors, such as intricate dance routines to indicate food availability. It is frequently maintained by beekeepers for its honey product. This species is widely distributed and an important pollinator for agriculture, though it is currently threatened by colony collapse disorder. It is also an important organism for scientific studies on social insects, especially as it now has a fully sequenced genome.  99% of bees you've seen are hard working ladies.");
+                "The western honey bee or European honey bee (Apis mellifera) is a species of honey bee. The genus name Apis is Latin for \"bee\", and mellifera means \"honey-bearing\". It has a defined social caste system and complex communication behaviors, such as intricate dance routines to indicate food availability. It is frequently maintained by beekeepers for its honey product. This species is widely distributed and an important pollinator for agriculture, though it is currently threatened by colony collapse disorder. It is also an important organism for scientific studies on social insects, especially as it now has a fully sequenced genome.  " +
+                        "99% of bees you've seen are hard working ladies."
+        );
         dbSetup.insertBugData(2, "Praying Mantis",
                 "Stagmomantis californica", "6", "1", "yellow green brown",
-                "Adult members of this species range in size from 50–60 mm in body length. There are green, yellow, and brown varieties, with subadults and adults tending to have dark transverse bands on the top of the abdomen. The wings of both sexes are mottled or suffused with dark brown or black and the hindwings are purplish. The inner forelegs are orangish, and there are some black spots near the mandibles. In most other physical respects they closely resemble other members of their mantid order, two of which are native to the state of California (the others are the slightly smaller Stagmomantis carolina and the larger and more common Stagmomantis limbata). The oothecae and hatchlings are different than those of S. limbata.  Also a style of kung-fu");
+                "Adult members of this species range in size from 50–60 mm in body length. There are green, yellow, and brown varieties, with subadults and adults tending to have dark transverse bands on the top of the abdomen. The wings of both sexes are mottled or suffused with dark brown or black and the hindwings are purplish. The inner forelegs are orangish, and there are some black spots near the mandibles. In most other physical respects they closely resemble other members of their mantid order, two of which are native to the state of California (the others are the slightly smaller Stagmomantis carolina and the larger and more common Stagmomantis limbata). The oothecae and hatchlings are different than those of S. limbata.  " +
+                        "Also a style of kung-fu"
+        );
         dbSetup.insertBugData(3, "Black Widow",
                 "Latrodectus hesperus", "8", "0", "black red",
-                "Latrodectus hesperus, the western black widow spider or western widow, is a venomous spider species found in western regions of North America. The female's body is 14–16 mm (1/2 in) in length and is black, often with an hourglass-shaped red mark on the lower abdomen. This \"hourglass\" mark can be yellow, and on rare occasions, white. The male of the species is around half this length and generally a tan color with lighter striping on the abdomen. The population was previously described as a subspecies of Latrodectus mactans and it is closely related to the northern species Latrodectus variolus. The species, as with others of the genus, build irregular or \"messy\" webs: Unlike the spiral webs or the tunnel-shaped webs of other spiders, the strands of a Latrodectus web have no apparent organization. Female black widows have potent venom composed of neurotoxins. Fatalities usually only happen with children and the elderly, however medical treatment may be required for others as well. However, the male black widow is harmless to humans. The female's consumption of the male after courtship, a cannibalistic and suicidal behaviour observed in Latrodectus hasseltii (Australia's redback), is rare in this species. Male western widows may breed several times during their relatively short lifespans. Males are known to show preference for mating with well-fed females over starved ones, taking cues from the females' webs.");
+                "Latrodectus hesperus, the western black widow spider or western widow, is a venomous spider species found in western regions of North America. The female's body is 14–16 mm (1/2 in) in length and is black, often with an hourglass-shaped red mark on the lower abdomen. This \"hourglass\" mark can be yellow, and on rare occasions, white. The male of the species is around half this length and generally a tan color with lighter striping on the abdomen. The population was previously described as a subspecies of Latrodectus mactans and it is closely related to the northern species Latrodectus variolus. The species, as with others of the genus, build irregular or \"messy\" webs: Unlike the spiral webs or the tunnel-shaped webs of other spiders, the strands of a Latrodectus web have no apparent organization. Female black widows have potent venom composed of neurotoxins. Fatalities usually only happen with children and the elderly, however medical treatment may be required for others as well. However, the male black widow is harmless to humans. The female's consumption of the male after courtship, a cannibalistic and suicidal behaviour observed in Latrodectus hasseltii (Australia's redback), is rare in this species. Male western widows may breed several times during their relatively short lifespans. " +
+                        "Males are known to show preference for mating with well-fed females over starved ones, taking cues from the females' webs."
+        );
         dbSetup.insertBugData(4, "House Cricket",
                 "Acheta domestica", "6", "1", "brown grey",
-                "The house cricket is typically gray or brownish in color, growing to 16–21 millimetres (0.63–0.83 in) in length. Males and females look similar, but females will have an ovipositor emerging from the rear, around 12 millimetres (0.47 in) long. The ovipositor is brown-black, and is surrounded by two appendages. On females, the cerci are also more prominent.");
+                "The house cricket is typically gray or brownish in color, growing to 16–21 millimetres (0.63–0.83 in) in length. Males and females look similar, but females will have an ovipositor emerging from the rear, around 12 millimetres (0.47 in) long. The ovipositor is brown-black, and is surrounded by two appendages. " +
+                        "On females, the cerci are also more prominent."
+        );
         dbSetup.insertBugData(5, "Tiger Swallowtail",
                 "Papilio glaucus", "6", "1", "black yellow",
-                "The Eastern tiger swallowtail (Papilio glaucus) is a species of swallowtail butterfly native to eastern North America. It is one of the most familiar butterflies in the eastern United States, where it is common in many different habitats. It flies from spring to fall, during which it produces two to three broods. Adults feed on the nectar of many species of flowers, mostly from those of the Apocynaceae, Asteraceae, and Fabaceae families. P. glaucus has a wingspan measuring 7.9 to 14 cm (3.1 to 5.5 in). The male is yellow with four black \"tiger stripes\" on each fore wing. Females may be either yellow or black, making them dimorphic. The yellow morph is similar to the male, but with a conspicuous band of blue spots along the hindwing, while the dark morph is almost completely black.\n" + "\n" + "The green eggs are laid singly on plants of the Magnoliaceae and Rosaceae families. Young caterpillars are brown and white; older ones are green with two black, yellow, and blue eyespots on the thorax. The caterpillar will turn brown prior to pupating. It will reach a length of 5.5 centimetres (2.2 in). The chrysalis varies from a whitish color to dark brown. Hibernation occurs in this stage in locations with cold winter months.");
+                "The Eastern tiger swallowtail (Papilio glaucus) is a species of swallowtail butterfly native to eastern North America. It is one of the most familiar butterflies in the eastern United States, where it is common in many different habitats. It flies from spring to fall, during which it produces two to three broods. Adults feed on the nectar of many species of flowers, mostly from those of the Apocynaceae, Asteraceae, and Fabaceae families. P. glaucus has a wingspan measuring 7.9 to 14 cm (3.1 to 5.5 in). The male is yellow with four black \"tiger stripes\" on each fore wing. Females may be either yellow or black, making them dimorphic. The yellow morph is similar to the male, but with a conspicuous band of blue spots along the hindwing, while the dark morph is almost completely black.\n" + "\n" + "The green eggs are laid singly on plants of the Magnoliaceae and Rosaceae families. Young caterpillars are brown and white; older ones are green with two black, yellow, and blue eyespots on the thorax. The caterpillar will turn brown prior to pupating. It will reach a length of 5.5 centimetres (2.2 in). The chrysalis varies from a whitish color to dark brown. " +
+                        "Hibernation occurs in this stage in locations with cold winter months."
+        );
         dbSetup.insertBugData(6, "Earthworm",
                 "Lumbricus terrestris", "0", "0", "brown pink",
                 "An earthworm is a tube-shaped, segmented worm found in the phylum Annelida. Earthworms are commonly found living in soil, feeding on live and dead organic matter. An earthworm's digestive system runs through the length of its body. It conducts respiration through its skin. It has a double transport system composed of coelomic fluid that moves within the fluid-filled coelom and a simple, closed blood circulatory system. It has a central and a peripheral nervous system. The central nervous system consists of two ganglia above the mouth, one on either side, connected to a nerve cord running back along its length to motor neurons and sensory cells in each segment. Large numbers of chemoreceptors are concentrated near its mouth. Circumferential and longitudinal muscles on the periphery of each segment enable the worm to move. Similar sets of muscles line the gut, and their actions move the digesting food toward the worm's anus.\n" +
                 "\n" + "Earthworms are hermaphrodites—each individual carries both male and female sex organs. They lack either an internal skeleton or exoskeleton, but maintain their structure with fluid-filled coelom chambers that function as a hydrostatic skeleton.\n" +
                 "\n" + "\"Earthworm\" is the common name for the largest members of Oligochaeta (which is either a class or a subclass depending on the author). In classical systems, they were placed in the order Opisthopora, on the basis of the male pores opening posterior to the female pores, though the internal male segments are anterior to the female. Theoretical cladistic studies have placed them, instead, in the suborder Lumbricina of the order Haplotaxida, but this may again soon change. Folk names for the earthworm include \"dew-worm\", \"rainworm\", \"night crawler\", and \"angleworm\" (due to its use as fishing bait)."+
-                "\n" +"Earthworm Jim loves plasma weapons.");
+                "\n" +"Earthworm Jim loves plasma weapons."
+        );
+
         dbSetup.insertBugData(7, "Black Bean Aphid",
                 "Aphis fabae", "6", "1", "black",
-                "The black bean aphid (Aphis fabae) is a small black insect in the Aphis genus, with a broad, soft body, a member of the order Hemiptera. Other common names include blackfly, bean aphid and beet leaf aphid. In the warmer months of the year it is found in large numbers on the undersides of leaves and on the growing tips of host plants, including various agricultural crops and many wild and ornamental plants. Both winged and wingless forms exist and at this time of year, they are all females. They suck sap from stems and leaves and cause distortion of the shoots, stunted plants, reduced yield and spoiled crops. This aphid also acts as a vector for viruses that cause plant disease and the honeydew it secretes may encourage the growth of sooty mould. It breeds profusely by live birth but its numbers are kept in check, especially in the later part of the summer, by various predatory and parasitic insects. Ants feed on the honeydew it produces and take active steps to remove the aphid's enemies. It is a widely distributed pest of agricultural crops and can be controlled by chemical or biological means. In the autumn, winged forms move to different host plants where both males and females are produced. These mate and the females lay eggs which overwinter.");
+                "The black bean aphid (Aphis fabae) is a small black insect in the Aphis genus, with a broad, soft body, a member of the order Hemiptera. Other common names include blackfly, bean aphid and beet leaf aphid. In the warmer months of the year it is found in large numbers on the undersides of leaves and on the growing tips of host plants, including various agricultural crops and many wild and ornamental plants. Both winged and wingless forms exist and at this time of year, they are all females. They suck sap from stems and leaves and cause distortion of the shoots, stunted plants, reduced yield and spoiled crops. This aphid also acts as a vector for viruses that cause plant disease and the honeydew it secretes may encourage the growth of sooty mould. It breeds profusely by live birth but its numbers are kept in check, especially in the later part of the summer, by various predatory and parasitic insects. Ants feed on the honeydew it produces and take active steps to remove the aphid's enemies. It is a widely distributed pest of agricultural crops and can be controlled by chemical or biological means. In the autumn, winged forms move to different host plants where both males and females are produced. " +
+                        "These mate and the females lay eggs which overwinter.");
+
         dbSetup.insertBugData(8, "Pea Aphid",
                 "Acyrthosiphon pisum", "6", "1", "green",
-                "Acyrthosiphon pisum, commonly known as the pea aphid (and colloquially known as the green dolphin, pea louse, and clover louse), is a sap-sucking insect in the Aphididae family. It feeds on several species of legumes (plant family Fabaceae) worldwide, including forage crops, such as pea, clover, alfalfa, and broad bean, and ranks among the aphid species of major agronomical importance. The pea aphid is a model organism for biological study whose genome has been sequenced and annotated.");
+                "Acyrthosiphon pisum, commonly known as the pea aphid (and colloquially known as the green dolphin, pea louse, and clover louse), is a sap-sucking insect in the Aphididae family. It feeds on several species of legumes (plant family Fabaceae) worldwide, including forage crops, such as pea, clover, alfalfa, and broad bean, and ranks among the aphid species of major agronomical importance. " +
+                        "The pea aphid is a model organism for biological study whose genome has been sequenced and annotated."
+        );
+
         dbSetup.insertBugData(9, "Lady Bug",
                 "Harmonia axyridis", "6", "1", "red black yellow orange",
                 "Harmonia axyridis is a large coccinellid beetle. Its colour ranges from yellow-orange to black, and the number of spots between none and 22. It is native to eastern Asia, but has been artificially introduced to North America and Europe to control aphids and scale insects. It is now common, well known, and spreading in those regions, and has also established in South Africa and widely across South America.\n" +
                 "\n" + "It is commonly known as the harlequin ladybird (because it occurs in numerous colour forms). It is also known in North America as the Ladybug, and (because it invades homes in October in preparation for overwintering) as Halloween lady beetle. In Japan, it is not generally distinguished from the seven-spot ladybird which is also common there.\n" +
-                "\n" + "When the species first arrived in the UK, it was labelled in jest as \"the many-named ladybird\", because among the names listed were: multivariate, southern, Japanese, and pumpkin ladybird.");
-        dbSetup.insertBugData(10, "Baby Got Back",
-                "Sir Mixus A-lot-us", "3", "0", "rainbow",
-                "Oh, my, God Becky, look at her butt\n" +
-                        "It is so big, she looks like\n" +
-                        "One of those rap guys' girlfriends.\n" +
-                        "But, ya know, who understands those rap guys?\n" +
-                        "They only talk to her, because,\n" +
-                        "She looks like a total prostitute, 'kay?\n" +
-                        "I mean, her butt, is just so big\n" +
-                        "I can't believe it's just so round, it's like out there\n" +
-                        "I mean gross, look\n" +
-                        "She's just so, black\n" +
-                        "\n" +
-                        "I like big butts and I can not lie\n" +
-                        "You other brothers can't deny\n" +
-                        "That when a girl walks in with an itty bitty waist\n" +
-                        "And a round thing in your face\n" +
-                        "You get sprung, want to pull up tough\n" +
-                        "'Cause you notice that butt was stuffed\n" +
-                        "Deep in the jeans she's wearing\n" +
-                        "I'm hooked and I can't stop staring\n" +
-                        "Oh baby, I want to get wit'cha\n" +
-                        "And take your picture\n" +
-                        "My homeboys tried to warn me\n" +
-                        "But with that butt you got makes (me so horny)\n" +
-                        "Ooh, Rump-o'-smooth-skin\n" +
-                        "You say you want to get in my Benz?\n" +
-                        "Well, use me, use me\n" +
-                        "'Cause you ain't that average groupie\n" +
-                        "I've seen her dancin'\n" +
-                        "To hell with romancin'\n" +
-                        "She's sweat, wet,\n" +
-                        "Got it goin' like a turbo 'Vette\n" +
-                        "I'm tired of magazines\n" +
-                        "Sayin' flat butts are the thing\n" +
-                        "Take the average black man and ask him that\n" +
-                        "She gotta pack much back\n" +
-                        "So, fellas (yeah) Fellas (yeah)\n" +
-                        "Has your girlfriend got the butt? (hell yeah)\n" +
-                        "Tell 'em to shake it (shake it) shake it (shake it)\n" +
-                        "Shake that healthy butt\n" +
-                        "Baby got back (L.A. fits with the Oakland booty)\n" +
-                        "\n" +
-                        "Baby got back (L.A. fits with the Oakland booty)\n" +
-                        "\n" +
-                        "I like 'em round, and big\n" +
-                        "And when I'm throwin' a gig\n" +
-                        "I just can't help myself, I'm actin' like an animal\n" +
-                        "Now here's my scandal\n" +
-                        "I want to get you home\n" +
-                        "And ugh, double-up, ugh, ugh\n" +
-                        "I ain't talkin' bout Playboy\n" +
-                        "'Cause silicone parts are made for toys\n" +
-                        "I want 'em real thick and juicy\n" +
-                        "So find that juicy double\n" +
-                        "Mix-a-Lot's in trouble\n" +
-                        "Beggin' for a piece of that bubble\n" +
-                        "So I'm lookin' at rock videos\n" +
-                        "Knock-kneed bimbos walkin' like hoes\n" +
-                        "You can have them bimbos\n" +
-                        "I'll keep my women like Flo Jo\n" +
-                        "A word to the thick soul sistas, I want to get with ya\n" +
-                        "I won't cuss or hit ya\n" +
-                        "But I gotta be straight when I say I want to fuck\n" +
-                        "Til the break of dawn\n" +
-                        "Baby got it goin' on\n" +
-                        "A lot of simps won't like this song\n" +
-                        "'Cause them punks like to hit it and quit it\n" +
-                        "And I'd rather stay and play\n" +
-                        "'Cause I'm long, and I'm strong\n" +
-                        "And I'm down to get the friction on\n" +
-                        "So, ladies (Yeah) Ladies (Yeah)\n" +
-                        "If you want to role in my Mercedes (Yeah)\n" +
-                        "Then turn around, stick it out\n" +
-                        "Even white boys got to shout\n" +
-                        "Baby got back\n" +
-                        "\n" +
-                        "Baby got back\n" +
-                        "Yeah, baby, when it comes to females\n" +
-                        "Cosmo ain't got nothin'\n" +
-                        "To do with my selection\n" +
-                        "Thirty six-twenty- four-thirty six\n" +
-                        "Ha ha, only if she's 5'3\n" +
-                        "\n" +
-                        "So your girlfriend rolls a Honda, playin' workout tapes by Fonda\n" +
-                        "But Fonda ain't got a motor in the back of her Honda\n" +
-                        "My anaconda don't want none\n" +
-                        "Unless you've got buns, hon\n" +
-                        "You can do side bends or sit-ups\n" +
-                        "But please don't lose that butt\n" +
-                        "Some brothers want to play that hard role\n" +
-                        "And tell you that the butt ain't gol'\n" +
-                        "So they toss it and leave it\n" +
-                        "And I pull up quick to retrieve it\n" +
-                        "So Cosmo says you're fat\n" +
-                        "Well I ain't down with that\n" +
-                        "'Cause your waist is small and your curves are kickin'\n" +
-                        "And I'm thinkin' bout stickin'\n" +
-                        "To the beanpole dames in the magazines\n" +
-                        "You ain't it, Miss Thing\n" +
-                        "Give me a sista, I can't resist her\n" +
-                        "Red beans and rice didn't miss her\n" +
-                        "Some knucklehead tried to dis\n" +
-                        "'Cause his girls are on my list\n" +
-                        "He had game but he chose to hit 'em\n" +
-                        "And I pull up quick to get wit 'em\n" +
-                        "So ladies, if the butt is round,\n" +
-                        "And you want a triple X throw down,\n" +
-                        "Dial 1-900-MIXALOT\n" +
-                        "And kick them nasty thoughts\n" +
-                        "Baby got back\n" +
-                        "\n" +
-                        "Baby got back");
+                "\n" + "When the species first arrived in the UK, it was labelled in jest as \"the many-named ladybird\", because among the names listed were: multivariate, southern, Japanese, and pumpkin ladybird."
+        );
+
+        dbSetup.insertBugData(10, "Woodlouse", "Armadillidium vulgare",
+                "14", "0", "brown black gray",
+                "Armadillidium vulgare is able to withstand drier conditions than many other woodlouse species, and is restricted to calcareous soils or coastal areas. It feeds chiefly on decaying plant matter, but also grazes lichens and algae from tree bark and walls.\n" +
+                        "\n" + "It is able to regulate its temperature through its behaviour, preferring bright sunshine when temperatures are low, but remaining in shadow when temperatures are high; temperatures below −2 °C (28 °F) or above 36 °C (97 °F) are lethal to it." +
+                        " A. vulgare is less susceptible to cold during the night, and may enter a state of dormancy during the winter in order to survive temperatures which would otherwise be lethal.");
+
 
 
         //Setting butCursorAdapter (instantiated above) to the ListView in the MainActivity called mainList;
@@ -275,8 +187,8 @@ public class MainActivity extends AppCompatActivity {
          //               ImageView mainImage = (ImageView) view.findViewById(R.id.main_list_image);
 
                         //Populates TextViews using data in the specified columns of the database held in searchCursor.
-                        commonNameTV.setText("Common Name: " +searchCursor.getString(searchCursor.getColumnIndex(BugSQLiteOpenHelper.COL_COMMON_NAME)));
-                        latinNameTV.setText("Latin Name: " +searchCursor.getString(searchCursor.getColumnIndex(BugSQLiteOpenHelper.COL_LATIN_NAME)));
+                        commonNameTV.setText(searchCursor.getString(searchCursor.getColumnIndex(BugSQLiteOpenHelper.COL_COMMON_NAME)));
+                        latinNameTV.setText(searchCursor.getString(searchCursor.getColumnIndex(BugSQLiteOpenHelper.COL_LATIN_NAME)));
          //               mainImage.setImageDrawable();
                     }
                 };
