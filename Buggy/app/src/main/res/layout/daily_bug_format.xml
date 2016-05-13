@@ -10,6 +10,7 @@
         android:layout_height="125dp"
         android:padding="5dp"
         android:layout_alignParentLeft="true"
+        android:transitionName="moving_bug"
          />
 
     <TextView

@@ -5,15 +5,20 @@ import android.content.Context;
 import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
+import android.support.v4.app.ActivityOptionsCompat;
 import android.support.v4.widget.CursorAdapter;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.SearchView;
+import android.transition.ChangeTransform;
+import android.transition.TransitionSet;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.Window;
 import android.widget.AdapterView;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -27,10 +32,11 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        getWindow().requestFeature(Window.FEATURE_CONTENT_TRANSITIONS);
         setContentView(R.layout.activity_main);
 
         //Creates an instance of the SQLiteOpenHelper helper, uses OpenHelper to get readable database.
-        BugSQLiteOpenHelper dbSetup = BugSQLiteOpenHelper.getInstance(MainActivity.this);
+        final BugSQLiteOpenHelper dbSetup = BugSQLiteOpenHelper.getInstance(MainActivity.this);
         dbSetup.getReadableDatabase();
 
         //Instantiates the MainActivity ListView allowing it to be called, customized, and populated.
@@ -38,6 +44,13 @@ public class MainActivity extends AppCompatActivity {
 
         //Creates a Cursor populated by getBugs Method in BugSQLiteOpenHelper Class.
         mainCursor = new BugSQLiteOpenHelper(this).getBugs();
+
+        TransitionSet transition = new TransitionSet();
+        transition.addTransition(new ChangeTransform());
+
+        getWindow().setSharedElementEnterTransition(transition);
+        getWindow().setSharedElementReturnTransition(transition);
+
 
         //Custom CursorAdapter which uses data held by mainCursor to populate custom ListView layouts.
         bugCursorAdapter = new CursorAdapter(MainActivity.this, mainCursor, 0) {
@@ -48,12 +61,40 @@ public class MainActivity extends AppCompatActivity {
             }
             @Override
             public void bindView(View view, Context context, Cursor mainCursor) {
+
                 //Provides variables to hold information to populate the identified fields in the main_list_format layout.
                 TextView commonNameTV = (TextView) view.findViewById(R.id.main_list_common);
                 TextView latinNameTV = (TextView) view.findViewById(R.id.main_list_latin);
+                ImageView listImage = (ImageView) view.findViewById(R.id.main_list_image);
                 //Populates TextViews using data in the specified columns of the database held in mainCursor.
+                int captureId = mainCursor.getInt(mainCursor.getColumnIndex(BugSQLiteOpenHelper.COL_ID));
                 commonNameTV.setText(mainCursor.getString(mainCursor.getColumnIndex(BugSQLiteOpenHelper.COL_COMMON_NAME)));
                 latinNameTV.setText(mainCursor.getString(mainCursor.getColumnIndex(BugSQLiteOpenHelper.COL_LATIN_NAME)));
+
+                switch(captureId) {
+                    case 1:     listImage.setImageResource(R.drawable.bee);
+                        break;
+                    case 2:     listImage.setImageResource(R.drawable.mantis);
+                        break;
+                    case 3:     listImage.setImageResource(R.drawable.blackwidow);
+                        break;
+                    case 4:     listImage.setImageResource(R.drawable.cricket);
+                        break;
+                    case 5:     listImage.setImageResource(R.drawable.tigerswallowtail);
+                        break;
+                    case 6:     listImage.setImageResource(R.drawable.earthworm);
+                        break;
+                    case 7:     listImage.setImageResource(R.drawable.blackaphid);
+                        break;
+                    case 8:     listImage.setImageResource(R.drawable.greenaphid);
+                        break;
+                    case 9:     listImage.setImageResource(R.drawable.ladybeetle);
+                        break;
+                    case 10:    listImage.setImageResource(R.drawable.woodlouse);
+                        break;
+                    case 11:    listImage.setImageResource(R.drawable.pillipede);
+                        break;
+                }
             }
         };
 
@@ -90,119 +131,15 @@ public class MainActivity extends AppCompatActivity {
                 "Harmonia axyridis is a large coccinellid beetle. Its colour ranges from yellow-orange to black, and the number of spots between none and 22. It is native to eastern Asia, but has been artificially introduced to North America and Europe to control aphids and scale insects. It is now common, well known, and spreading in those regions, and has also established in South Africa and widely across South America.\n" +
                 "\n" + "It is commonly known as the harlequin ladybird (because it occurs in numerous colour forms). It is also known in North America as the Ladybug, and (because it invades homes in October in preparation for overwintering) as Halloween lady beetle. In Japan, it is not generally distinguished from the seven-spot ladybird which is also common there.\n" +
                 "\n" + "When the species first arrived in the UK, it was labelled in jest as \"the many-named ladybird\", because among the names listed were: multivariate, southern, Japanese, and pumpkin ladybird.");
-        dbSetup.insertBugData(10, "Baby Got Back",
-                "Sir Mixus A-lot-us", "3", "0", "rainbow",
-                "Oh, my, God Becky, look at her butt\n" +
-                        "It is so big, she looks like\n" +
-                        "One of those rap guys' girlfriends.\n" +
-                        "But, ya know, who understands those rap guys?\n" +
-                        "They only talk to her, because,\n" +
-                        "She looks like a total prostitute, 'kay?\n" +
-                        "I mean, her butt, is just so big\n" +
-                        "I can't believe it's just so round, it's like out there\n" +
-                        "I mean gross, look\n" +
-                        "She's just so, black\n" +
-                        "\n" +
-                        "I like big butts and I can not lie\n" +
-                        "You other brothers can't deny\n" +
-                        "That when a girl walks in with an itty bitty waist\n" +
-                        "And a round thing in your face\n" +
-                        "You get sprung, want to pull up tough\n" +
-                        "'Cause you notice that butt was stuffed\n" +
-                        "Deep in the jeans she's wearing\n" +
-                        "I'm hooked and I can't stop staring\n" +
-                        "Oh baby, I want to get wit'cha\n" +
-                        "And take your picture\n" +
-                        "My homeboys tried to warn me\n" +
-                        "But with that butt you got makes (me so horny)\n" +
-                        "Ooh, Rump-o'-smooth-skin\n" +
-                        "You say you want to get in my Benz?\n" +
-                        "Well, use me, use me\n" +
-                        "'Cause you ain't that average groupie\n" +
-                        "I've seen her dancin'\n" +
-                        "To hell with romancin'\n" +
-                        "She's sweat, wet,\n" +
-                        "Got it goin' like a turbo 'Vette\n" +
-                        "I'm tired of magazines\n" +
-                        "Sayin' flat butts are the thing\n" +
-                        "Take the average black man and ask him that\n" +
-                        "She gotta pack much back\n" +
-                        "So, fellas (yeah) Fellas (yeah)\n" +
-                        "Has your girlfriend got the butt? (hell yeah)\n" +
-                        "Tell 'em to shake it (shake it) shake it (shake it)\n" +
-                        "Shake that healthy butt\n" +
-                        "Baby got back (L.A. fits with the Oakland booty)\n" +
-                        "\n" +
-                        "Baby got back (L.A. fits with the Oakland booty)\n" +
-                        "\n" +
-                        "I like 'em round, and big\n" +
-                        "And when I'm throwin' a gig\n" +
-                        "I just can't help myself, I'm actin' like an animal\n" +
-                        "Now here's my scandal\n" +
-                        "I want to get you home\n" +
-                        "And ugh, double-up, ugh, ugh\n" +
-                        "I ain't talkin' bout Playboy\n" +
-                        "'Cause silicone parts are made for toys\n" +
-                        "I want 'em real thick and juicy\n" +
-                        "So find that juicy double\n" +
-                        "Mix-a-Lot's in trouble\n" +
-                        "Beggin' for a piece of that bubble\n" +
-                        "So I'm lookin' at rock videos\n" +
-                        "Knock-kneed bimbos walkin' like hoes\n" +
-                        "You can have them bimbos\n" +
-                        "I'll keep my women like Flo Jo\n" +
-                        "A word to the thick soul sistas, I want to get with ya\n" +
-                        "I won't cuss or hit ya\n" +
-                        "But I gotta be straight when I say I want to fuck\n" +
-                        "Til the break of dawn\n" +
-                        "Baby got it goin' on\n" +
-                        "A lot of simps won't like this song\n" +
-                        "'Cause them punks like to hit it and quit it\n" +
-                        "And I'd rather stay and play\n" +
-                        "'Cause I'm long, and I'm strong\n" +
-                        "And I'm down to get the friction on\n" +
-                        "So, ladies (Yeah) Ladies (Yeah)\n" +
-                        "If you want to role in my Mercedes (Yeah)\n" +
-                        "Then turn around, stick it out\n" +
-                        "Even white boys got to shout\n" +
-                        "Baby got back\n" +
-                        "\n" +
-                        "Baby got back\n" +
-                        "Yeah, baby, when it comes to females\n" +
-                        "Cosmo ain't got nothin'\n" +
-                        "To do with my selection\n" +
-                        "Thirty six-twenty- four-thirty six\n" +
-                        "Ha ha, only if she's 5'3\n" +
-                        "\n" +
-                        "So your girlfriend rolls a Honda, playin' workout tapes by Fonda\n" +
-                        "But Fonda ain't got a motor in the back of her Honda\n" +
-                        "My anaconda don't want none\n" +
-                        "Unless you've got buns, hon\n" +
-                        "You can do side bends or sit-ups\n" +
-                        "But please don't lose that butt\n" +
-                        "Some brothers want to play that hard role\n" +
-                        "And tell you that the butt ain't gol'\n" +
-                        "So they toss it and leave it\n" +
-                        "And I pull up quick to retrieve it\n" +
-                        "So Cosmo says you're fat\n" +
-                        "Well I ain't down with that\n" +
-                        "'Cause your waist is small and your curves are kickin'\n" +
-                        "And I'm thinkin' bout stickin'\n" +
-                        "To the beanpole dames in the magazines\n" +
-                        "You ain't it, Miss Thing\n" +
-                        "Give me a sista, I can't resist her\n" +
-                        "Red beans and rice didn't miss her\n" +
-                        "Some knucklehead tried to dis\n" +
-                        "'Cause his girls are on my list\n" +
-                        "He had game but he chose to hit 'em\n" +
-                        "And I pull up quick to get wit 'em\n" +
-                        "So ladies, if the butt is round,\n" +
-                        "And you want a triple X throw down,\n" +
-                        "Dial 1-900-MIXALOT\n" +
-                        "And kick them nasty thoughts\n" +
-                        "Baby got back\n" +
-                        "\n" +
-                        "Baby got back");
+        dbSetup.insertBugData(10, "Common Woodlouse", "Armadillidium vulgare",
+                "14", "0", "black brown gray",
+                "Armadillidium vulgare may reach a length of 18 millimetres (0.71 in), and is capable of rolling into a ball when disturbed; this ability, along with its general appearance, gives it the name pill-bug and also creates the potential for confusion with pill millipedes such as Glomeris marginata. It can be distinguished from Armadillidium nasatum and Armadillidium depressum, " +
+                        "the only other British species in the genus, by the gap that A. nasatum and A. depressum leave when rolling into a ball; A. vulgare does not leave such a gap.");
+        dbSetup.insertBugData(11, "Pill Millipede", "Glomeris Marginata",
+                "36", "0", "black red yellow brown",
+                "Glomeris marginata grows up to 20 millimetres (0.8 in) long and 8 mm (0.3 in) wide, and is covered by twelve black dorsal plates with white rims. Each segment except those at the front and back bears two pairs of legs, with around 18 pairs in total. This distinguishes pill millipedes from pill woodlice, both of which are called \"pillbugs\" — woodlice have 7 pairs of walking legs, one per body segment, while millipedes have more pairs, and with two pairs to each apparent body segment.\n" +
+                        "\n" + "When rolled into a ball, G. marginata can be distinguished from a rolled–up pill woodlouse by the asymmetrical ball it rolls into; pill woodlice roll into much more perfect spheres. The cuticle is also darker and shinier, and the antennae are shorter. The head and tail of a woodlouse have a greater number of small plates, while the head of Glomeris is protected by a single large shield, and it lacks the uropods of woodlice at the read end. " +
+                        "Although usually black, red, yellow and brown individuals do occasionally occur.");
 
 
         //Setting butCursorAdapter (instantiated above) to the ListView in the MainActivity called mainList;
@@ -219,10 +156,14 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Intent detailsIntent = new Intent(MainActivity.this, DetailsActivity.class);
-
                 Cursor selectedCursor = (Cursor) parent.getAdapter().getItem(position);
+
+                ImageView transitionImage = (ImageView)findViewById(R.id.main_list_image);
+                ActivityOptionsCompat bugOptions = ActivityOptionsCompat.makeSceneTransitionAnimation(MainActivity.this, transitionImage, "moving_bug");
+
                 detailsIntent.putExtra("id", selectedCursor.getInt(selectedCursor.getColumnIndex(BugSQLiteOpenHelper.COL_ID)));
-                startActivity(detailsIntent);
+
+                startActivity(detailsIntent, bugOptions.toBundle());
             }
         });
         handleSearchIntent(getIntent());
@@ -272,12 +213,37 @@ public class MainActivity extends AppCompatActivity {
                         //Provides variables to hold information to populate the identified fields in the main_list_format layout.
                         TextView commonNameTV = (TextView) view.findViewById(R.id.main_list_common);
                         TextView latinNameTV = (TextView) view.findViewById(R.id.main_list_latin);
-         //               ImageView mainImage = (ImageView) view.findViewById(R.id.main_list_image);
+                        ImageView listImage = (ImageView) view.findViewById(R.id.main_list_image);
 
                         //Populates TextViews using data in the specified columns of the database held in searchCursor.
-                        commonNameTV.setText("Common Name: " +searchCursor.getString(searchCursor.getColumnIndex(BugSQLiteOpenHelper.COL_COMMON_NAME)));
-                        latinNameTV.setText("Latin Name: " +searchCursor.getString(searchCursor.getColumnIndex(BugSQLiteOpenHelper.COL_LATIN_NAME)));
-         //               mainImage.setImageDrawable();
+                        commonNameTV.setText(searchCursor.getString(searchCursor.getColumnIndex(BugSQLiteOpenHelper.COL_COMMON_NAME)));
+                        latinNameTV.setText(searchCursor.getString(searchCursor.getColumnIndex(BugSQLiteOpenHelper.COL_LATIN_NAME)));
+                        int captureId = searchCursor.getInt(searchCursor.getColumnIndex(BugSQLiteOpenHelper.COL_ID));
+
+                        switch(captureId) {
+                            case 1:     listImage.setImageResource(R.drawable.bee);
+                                break;
+                            case 2:     listImage.setImageResource(R.drawable.mantis);
+                                break;
+                            case 3:     listImage.setImageResource(R.drawable.blackwidow);
+                                break;
+                            case 4:     listImage.setImageResource(R.drawable.crickets);
+                                break;
+                            case 5:     listImage.setImageResource(R.drawable.tigerswallowtail);
+                                break;
+                            case 6:     listImage.setImageResource(R.drawable.earthworm);
+                                break;
+                            case 7:     listImage.setImageResource(R.drawable.blackaphid);
+                                break;
+                            case 8:     listImage.setImageResource(R.drawable.greenaphid);
+                                break;
+                            case 9:     listImage.setImageResource(R.drawable.ladybeetle);
+                                break;
+                            case 10:    listImage.setImageResource(R.drawable.woodlouse);
+                                break;
+                            case 11:    listImage.setImageResource(R.drawable.pillipede);
+                                break;
+                        }
                     }
                 };
                 mainList.setAdapter(bugSearchCursorAdapter);

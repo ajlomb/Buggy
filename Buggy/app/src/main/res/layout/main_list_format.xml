@@ -33,6 +33,9 @@
             android:id="@+id/main_list_image"
             android:layout_width="100dp"
             android:layout_height="100dp"
+            android:padding="5dp"
+            android:background="#000000"
+            android:transitionName="moving_bug"
             android:layout_gravity="end"/>
 
     </android.support.v7.widget.CardView>
