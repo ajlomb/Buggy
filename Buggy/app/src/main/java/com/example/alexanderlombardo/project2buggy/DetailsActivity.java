@@ -52,8 +52,8 @@ public class DetailsActivity extends AppCompatActivity {
             }
             detailColors.setText("Colors: "+captureColors);
             numLegs.setText("Legs: "+captureNumLegs);
-            commonName.setText("Common Name: " +captureCommonName);
-            latinName.setText("Binomial Name: " +captureLatinName);
+            commonName.setText("Common Name: \n" +captureCommonName);
+            latinName.setText("Binomial Name: \n" +captureLatinName);
             detailDescription.setText(captureDescript);
 
             switch(captureId) {

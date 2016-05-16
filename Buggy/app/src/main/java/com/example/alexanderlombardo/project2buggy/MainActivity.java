@@ -158,8 +158,10 @@ public class MainActivity extends AppCompatActivity {
                 Intent detailsIntent = new Intent(MainActivity.this, DetailsActivity.class);
                 Cursor selectedCursor = (Cursor) parent.getAdapter().getItem(position);
 
-                ImageView transitionImage = (ImageView)findViewById(R.id.main_list_image);
-                ActivityOptionsCompat bugOptions = ActivityOptionsCompat.makeSceneTransitionAnimation(MainActivity.this, transitionImage, "moving_bug");
+                View derp = view.findViewById(R.id.card_view);
+
+                //View transitionImage = view.findViewById(R.id.main_list_image);
+                ActivityOptionsCompat bugOptions = ActivityOptionsCompat.makeSceneTransitionAnimation(MainActivity.this, derp, "moving_bug");
 
                 detailsIntent.putExtra("id", selectedCursor.getInt(selectedCursor.getColumnIndex(BugSQLiteOpenHelper.COL_ID)));
 
